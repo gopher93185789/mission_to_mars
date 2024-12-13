@@ -4,3 +4,22 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.planet {
+    display: flex;
+}
+
+.mars-front {
+    height: 1000px;
+    width: 1000px;
+    animation: rotateCircle 300s linear infinite;
+}
+
+@keyframes rotateCircle {
+  0% {
+    transform: rotate(0deg); /* Start from 0 degrees */
+  }
+  100% {
+    transform: rotate(360deg); /* Rotate 360 degrees */
+  }
+}
