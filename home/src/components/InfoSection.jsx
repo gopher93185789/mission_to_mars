@@ -8,7 +8,7 @@ const keys = [
 
 export function InfoSection() {
     return (    
-        <div className="h-48 w-8/12 flex flex-row gap-5 overflow-hidden">
+        <div className="h-48 w-6/12 flex flex-row gap-5 overflow-hidden">
             {keys.map((item, idx) => (
                 <div key={idx} className="h-full w-96 flex flex-col justify-center p-5 items-center" >
                     <p className="text-[#BDC5E2] text-4xl w-full text-nowrap font-bold text-opacity-70">{item.itemname}</p>
