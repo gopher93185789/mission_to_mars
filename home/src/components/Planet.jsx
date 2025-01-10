@@ -33,7 +33,7 @@ export function Planet({size}) {
           <ambientLight intensity={1.5} />
           <pointLight position={[10, 10, 10]} />
           <RotatingModel position={[0,-2, 0]}/>
-          <OrbitControls  enablePan={false} />
+          <OrbitControls  enablePan={false} enableZoom={false} />
         </Canvas>
       </div>
       );
