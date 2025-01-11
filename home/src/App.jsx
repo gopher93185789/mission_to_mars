@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate  } from "react-router-dom"
 import { Navbar } from "./components/Navbar"
-import { Home } from "./pages/home/Home"
+import { Home } from "./pages/Home";
 import { StarCanvas } from "./components/StarCanvas";
 
 

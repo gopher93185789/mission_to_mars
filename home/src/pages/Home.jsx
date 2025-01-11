@@ -1,6 +1,6 @@
-import { Planet } from "../../components/Planet";
-import { InfoSection } from "../../components/InfoSection";
-import { PlanetName } from "../../components/PlanetName";
+import { Planet } from "../components/Planet";
+import { InfoSection } from "../components/InfoSection";
+import { PlanetName } from "../components/PlanetName";
 
 export function Home() {
 
