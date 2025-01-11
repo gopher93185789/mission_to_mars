@@ -12,8 +12,8 @@ function RotatingModel({position}) {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setRotation((prev) => [prev[0], prev[1] + 0.01, prev[2]]);
-    }, 32);  
+      setRotation((prev) => [prev[0], prev[1] + 0.001, prev[2]]);
+    }, 25);  
 
     return () => clearInterval(interval);
   }, []);
@@ -27,14 +27,19 @@ function RotatingModel({position}) {
 
 
 export function Planet({size}) {
+  
+
     return (
         <div className={size}> 
-        <Canvas camera={{ position: [0, -1, 4.3] }}>
+        <Canvas camera={{ position: [0, -1, 5], zoom: 1.6 }}>
           <ambientLight intensity={1.5} />
           <pointLight position={[10, 10, 10]} />
           <RotatingModel position={[0,-2, 0]}/>
-          <OrbitControls  enablePan={false} enableZoom={false} />
+          <OrbitControls  enablePan={false} />
         </Canvas>
       </div>
       );
 }
+
+
+// fnal := 3.6

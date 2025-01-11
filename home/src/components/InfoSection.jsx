@@ -2,11 +2,13 @@ const keys = [
     { itemname: "Galaxy", info: "Milky Way" },             
     { itemname: "Diameter", info: "6,779 km" },            
     { itemname: "Day length", info: "24.6 hours" },        
-    { itemname: "Temperature", info: "-60°C" },   
+    { itemname: "Temperature", info: "-60°C" }, 
+    { itemname: "Distance", info: 2342423 },     
     { itemname: "Climate", info: "Cold" },     
 ];
 
 export function InfoSection() {
+
     return (    
         <div className="h-40 flex flex-row gap-4 overflow-hidden">
             {keys.map((item, idx) => (

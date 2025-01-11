@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 
 const keys = [
-    { itemname: "Home", link: "/" },             
-    { itemname: "Settings", link: "/settings" },            
+    { itemname: "Home", link: "/" },                       
     { itemname: "Flight", link: "/flight" },        
     { itemname: "Ebooks", link: "/ebooks" },   
     { itemname: "Games", link: "#" },
