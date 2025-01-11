@@ -8,12 +8,7 @@ export function StarCanvas({numStars=100, height=window.innerHeight, width=(wind
         useEffect(() => {
             const canvas = canvasRef.current;
             const ctx = canvas.getContext("2d");
-            
-            const removeStar = (index) => {
-                stars.splice(index, 1); 
-                ctx.clearRect(0, 0, canvas.width, canvas.height); 
-                stars.forEach(star => drawStar(ctx, star.x, star.y, 5, 1, 0.5, 0.5));
-            };
+
             
             const drawStar = (ctx, cx, cy, pointes, or, ir, brightness) => {
                 let rot = Math.PI / 2 * 3;
