@@ -95,15 +95,15 @@ export function Entertainment() {
                 </div>
 
                 <div className="w-full h-full mt-1 flex-grow-0 overflow-hidden flex flex-col gap-5">
-                    <p className="text-white font-bold text-2xl h-fit">Featured</p>
-                    <div className="w-full h-[30%]  overflow-scroll  py-2 scrollbar-thin scrollbar-track-neutral-950 scrollbar-thumb-neutral-800 overflow-y-hidden overflow-x-auto flex flex-row gap-5">
+                    <p className="text-white font-bold text-lg h-fit">Featured</p>
+                    <div className="w-full h-[30%]  overflow-scroll  py-1 scrollbar-thin scrollbar-track-neutral-950 scrollbar-thumb-neutral-800 overflow-y-hidden overflow-x-auto flex flex-row gap-5">
                         {featured.length > 0 ? featured.map((item, idx) => (
                             <div key={idx} onClick={handleClick} className="aspect-video hover:cursor-pointer relative bg-black group overflow-hidden rounded-xl">
                                 <img draggable={"false"} src={item.link} className="z-0 group-hover:scale-110 duration-500 ease-in-out w-full h-full absolute top-0 left-0" />
-                                <div className="w-full h-1/5 absolute left-0 pt-0 pl-3  pb-2 bottom-0 mt-auto backdrop-blur-sm ">
+                                <div className="w-full h-1/4 absolute left-0 pt-0 pl-3 pb-3 bottom-0 mt-auto backdrop-blur-sm ">
                                     <div className="w-full h-full flex flex-col">
-                                        <p className="text-left text-white text-2xl font-bold">{item.title}</p>
-                                        <p className="text-left text-white text-opacity-50 text-lg">{item.release}</p>
+                                        <p className="text-left text-white text-lg font-bold">{item.title}</p>
+                                        <p className="text-left text-white text-opacity-50 text-sm">{item.release}</p>
                                     </div>
                                 </div>
                             </div> 
@@ -112,18 +112,18 @@ export function Entertainment() {
 
                     </div>
 
-                    <p className="text-white font-bold text-2xl h-fit">Explore {currGenre} movies</p>
+                    <p className="text-white font-bold text-lg h-fit">Explore {currGenre} movies</p>
                     <div ref={exploreRef} onMouseUp={() => handleMouseUp(exploreRef)} onMouseMove={(e) => handleMouseMove(e, exploreRef)} onMouseDown={(e) => handleDown(e, exploreRef)} onMouseLeave={() => handleMouseLeave(exploreRef)} className="w-full h-[25%]  overflow-scroll  py-2 scrollbar-thin scrollbar-track-neutral-950 scrollbar-thumb-neutral-800 overflow-y-hidden overflow-x-auto flex flex-row gap-5">
                         {movies.length > 0 ? movies.map((item, index) => (
                             <div key={index} className="aspect-video flex-shrink-0 overflow-hidden rounded-xl relative">
                                 <img draggable={"false"} src={item.link} className="z-0 w-full opacity-70 h-full absolute top-0 left-0" />
                                 <button onClick={handleClick}>
-                                    <img draggable={"false"} src="play-button.png" className="w-24 h-24 hover:scale-110 duration-300 ease-in-out will-change-transform absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 " />
+                                    <img draggable={"false"} src="play-button.png" className="w-16 h-16 hover:scale-110 duration-300 ease-in-out will-change-transform absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 " />
                                 </button>
                                 <div className="w-full h-1/4 absolute left-0 pt-0 pl-3 pb-4 bottom-0 mt-auto backdrop-blur-sm ">
                                     <div className="w-full h-full flex flex-col">
-                                        <p className="text-left text-white text-2xl font-bold">{item.title}</p>
-                                        <p className="text-left text-white text-opacity-50 text-lg">{item.release}</p>
+                                        <p className="text-left text-white text-lg font-bold">{item.title}</p>
+                                        <p className="text-left text-white text-opacity-50 text-sm">{item.release}</p>
                                     </div>
                                 </div>
                             </div>
@@ -131,18 +131,18 @@ export function Entertainment() {
                     </div>
 
 
-                    <p className="text-white font-bold text-2xl h-fit">Explore {currGenre} shows</p>
+                    <p className="text-white font-bold text-lg h-fit">Explore {currGenre} shows</p>
                     <div ref={shows} onMouseUp={() => handleMouseUp(shows)} onMouseMove={(e) => handleMouseMove(e, shows)} onMouseDown={(e) => handleDown(e, shows)} onMouseLeave={() => handleMouseLeave(shows)} className="w-full h-[25%]  overflow-scroll  py-2 scrollbar-thin scrollbar-track-neutral-950 scrollbar-thumb-neutral-800 overflow-y-hidden overflow-x-auto flex flex-row gap-5">
                         {defaultShows.length > 0 ? defaultShows.map((item, index) => (
                             <div key={index} className="aspect-video flex-shrink-0 overflow-hidden rounded-xl relative">
                                 <img draggable={"false"} src={item.link} className="z-0 w-full opacity-70 h-full absolute top-0 left-0" />
                                 <button onClick={handleClick}>
-                                    <img draggable={"false"} src="play-button.png" className="w-24 h-24 hover:scale-110 duration-300 ease-in-out will-change-transform absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 " />
+                                    <img draggable={"false"} src="play-button.png" className="w-16 h-16 hover:scale-110 duration-300 ease-in-out will-change-transform absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 " />
                                 </button>
                                 <div className="w-full h-1/4 absolute left-0 pt-0 pl-3 pb-4 bottom-0 mt-auto backdrop-blur-sm ">
                                     <div className="w-full h-full flex flex-col">
-                                        <p className="text-left text-white text-2xl font-bold">{item.title}</p>
-                                        <p className="text-left text-white text-opacity-50 text-lg">{item.release}</p>
+                                        <p className="text-left text-white text-lg font-bold">{item.title}</p>
+                                        <p className="text-left text-white text-opacity-50 text-sm">{item.release}</p>
                                     </div>
                                 </div>
                             </div>
