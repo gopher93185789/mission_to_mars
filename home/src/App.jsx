@@ -2,14 +2,14 @@ import { BrowserRouter, Routes, Route, Navigate  } from "react-router-dom"
 import { Navbar } from "./components/Navbar"
 import { Home } from "./pages/Home";
 import { StarCanvas } from "./components/StarCanvas";
-import { Movies } from "./pages/Movies";
+import { Entertainment } from "./pages/Entertainment";
 import { Ebooks } from "./pages/Ebooks/Ebooks";
 
 
 
 export default function App() {
   return (
-    <div className="h-screen font-jakarta w-screen  select-none flex flex-col items-center ">
+    <div className="h-screen overflow-hidden font-jakarta w-screen  select-none flex flex-col items-center ">
       <Navbar />
       
       <StarCanvas numStars={300} width={window.innerWidth} />
@@ -17,7 +17,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/movies" element={<Movies />}  />
+          <Route path="/entertainment" element={<Entertainment />}  />
           <Route path="/Flight"  />
           <Route path="/Library" element={<Ebooks />}  />
         </Routes>
