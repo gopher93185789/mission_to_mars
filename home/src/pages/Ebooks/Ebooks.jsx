@@ -15,7 +15,7 @@ export function Ebooks() {
     return (
         <>  
             <Rings />
-            <BigText text='Ebooks' />
+            <BigText text='Library' />
             <div className="w-full h-full mt-5 justify-center flex flex-row gap-10">
                 {books.map((item, idx) => (
                 <div key={idx} className="ebook-card">

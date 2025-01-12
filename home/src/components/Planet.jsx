@@ -27,10 +27,18 @@ function RotatingModel({position}) {
 
 
 export function Planet({size}) {
-  
+  const grabber = useRef(null)
+
+  const mouseDown = (ref) => {
+    ref.current.style.cursor = "grabbing"; 
+  }
+
+  const mouseUp = (ref) => {
+    ref.current.style.cursor = "grab"; 
+  }
 
     return (
-        <div className={size}> 
+        <div ref={grabber} onMouseDown={() => mouseDown(grabber)} onMouseUp={() => mouseUp(grabber)}  className={`${size} hover:cursor-grab`}> 
         <Canvas camera={{ position: [0, -1, 5], zoom: 1.6 }}>
           <ambientLight intensity={1.5} />
           <pointLight position={[10, 10, 10]} />

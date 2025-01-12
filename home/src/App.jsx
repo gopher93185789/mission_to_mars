@@ -19,11 +19,9 @@ export default function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/movies" element={<Movies />}  />
           <Route path="/Flight"  />
-          <Route path="/Ebooks" element={<Ebooks />}  />
+          <Route path="/Library" element={<Ebooks />}  />
         </Routes>
       </BrowserRouter>
     </div>
   )
 }
-
-// tt32 - sz

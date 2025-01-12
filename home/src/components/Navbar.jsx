@@ -3,14 +3,16 @@ import { useEffect, useState } from "react";
 const keys = [
     { itemname: "Home", link: "/home" },                       
     { itemname: "Flight", link: "/flight" },        
-    { itemname: "Ebooks", link: "/ebooks" },   
+    { itemname: "Library", link: "/Library" },   
     { itemname: "Games", link: "/games" },
     { itemname: "Movies", link: "/movies" },   
     { itemname: "Shows", link: "/shows" },      
     { itemname: "Fitness", link: "/fitness" },            
     { itemname: "Music", link: "/music" },        
     { itemname: "Food", link: "/food" },   
-    { itemname: "Help", link: "/help" },          
+    { itemname: "VR", link: "/VR" }, 
+    { itemname: "Webcam", link: "/webcam" },
+    { itemname: "Playground", link: "/Playground" },                   
 ];
 
 
