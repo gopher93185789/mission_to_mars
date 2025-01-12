@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate  } from "react-router-dom"
 import { Navbar } from "./components/Navbar"
 import { Home } from "./pages/Home";
 import { StarCanvas } from "./components/StarCanvas";
+import { Movies } from "./pages/Movies";
 
 
 
@@ -15,7 +16,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/Settings"  />
+          <Route path="/movies" element={<Movies />}  />
           <Route path="/Flight"  />
           <Route path="/Ebooks"  />
         </Routes>
