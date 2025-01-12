@@ -18,7 +18,7 @@ const movies = [
     {title: "No Country for Old Men", release: 2007, link: "movies/ncfom.png"},
     {title: "Fury", release: 2014, link: "movies/tank.png"},
     {title: "Pacific Rim", release: 2013, link: "movies/pacific.png"},
-    {title: "The Place Beyond the Pines", release: 2012, link: "movies/pines.png"},
+    {title: "The PBT Pines", release: 2012, link: "movies/pines.png"},
     {title: "The Wolf of Wall Street", release: 2013, link: "movies/wow.png"},
 ];
 
@@ -117,13 +117,19 @@ export function Entertainment() {
                         {movies.length > 0 ? movies.map((item, index) => (
                             <div key={index} className="aspect-video flex-shrink-0 overflow-hidden rounded-xl relative">
                                 <img draggable={"false"} src={item.link} className="z-0 w-full opacity-70 h-full absolute top-0 left-0" />
-                                <button onClick={handleClick}>
-                                    <img draggable={"false"} src="play-button.png" className="w-16 h-16 hover:scale-110 duration-300 ease-in-out will-change-transform absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 " />
-                                </button>
-                                <div className="w-full h-1/4 absolute left-0 pt-0 pl-3 pb-4 bottom-0 mt-auto backdrop-blur-sm ">
-                                    <div className="w-full h-full flex flex-col">
-                                        <p className="text-left text-white text-lg font-bold">{item.title}</p>
-                                        <p className="text-left text-white text-opacity-50 text-sm">{item.release}</p>
+  
+                                <div className="w-full h-1/3 absolute left-0 pt-0 pl-3 pb-4 bottom-0 mt-auto backdrop-blur-sm ">
+                                    <div className="w-full  h-full flex flex-row">
+                                        <div className="w-4/5">
+                                            <p className="text-left text-nowrap text-white text-lg font-bold">{item.title}</p>
+                                            <p className="text-left text-white text-opacity-50 text-sm">{item.release}</p>
+                                        </div>
+                                        <div className="w-2/12 flex items-center justify-end"> 
+                                            <button onClick={handleClick}>
+                                                <img draggable={"false"} src="play-button.png" className="w-12 mt-1 h-12 hover:scale-110 duration-300 ease-in-out will-change-transform  " />
+                                            </button>
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -136,13 +142,19 @@ export function Entertainment() {
                         {defaultShows.length > 0 ? defaultShows.map((item, index) => (
                             <div key={index} className="aspect-video flex-shrink-0 overflow-hidden rounded-xl relative">
                                 <img draggable={"false"} src={item.link} className="z-0 w-full opacity-70 h-full absolute top-0 left-0" />
-                                <button onClick={handleClick}>
-                                    <img draggable={"false"} src="play-button.png" className="w-16 h-16 hover:scale-110 duration-300 ease-in-out will-change-transform absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 " />
-                                </button>
-                                <div className="w-full h-1/4 absolute left-0 pt-0 pl-3 pb-4 bottom-0 mt-auto backdrop-blur-sm ">
-                                    <div className="w-full h-full flex flex-col">
-                                        <p className="text-left text-white text-lg font-bold">{item.title}</p>
-                                        <p className="text-left text-white text-opacity-50 text-sm">{item.release}</p>
+  
+                                <div className="w-full h-1/3 absolute left-0 pt-0 pl-3 pb-4 bottom-0 mt-auto backdrop-blur-sm ">
+                                    <div className="w-full  h-full flex flex-row">
+                                        <div className="w-4/5">
+                                            <p className="text-left text-nowrap text-white text-lg font-bold">{item.title}</p>
+                                            <p className="text-left text-white text-opacity-50 text-sm">{item.release}</p>
+                                        </div>
+                                        <div className="w-2/12 flex items-center justify-end"> 
+                                            <button onClick={handleClick}>
+                                                <img draggable={"false"} src="play-button.png" className="w-12 mt-1 h-12 hover:scale-110 duration-300 ease-in-out will-change-transform  " />
+                                            </button>
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
