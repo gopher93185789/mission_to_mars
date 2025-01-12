@@ -3,6 +3,7 @@ import { Navbar } from "./components/Navbar"
 import { Home } from "./pages/Home";
 import { StarCanvas } from "./components/StarCanvas";
 import { Movies } from "./pages/Movies";
+import { Ebooks } from "./pages/Ebooks/Ebooks";
 
 
 
@@ -18,7 +19,7 @@ export default function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/movies" element={<Movies />}  />
           <Route path="/Flight"  />
-          <Route path="/Ebooks"  />
+          <Route path="/Ebooks" element={<Ebooks />}  />
         </Routes>
       </BrowserRouter>
     </div>
