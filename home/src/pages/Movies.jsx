@@ -11,7 +11,12 @@ export function Movies() {
     const [scrollLeft, setScrollLeft] = useState(0);
 
     const handleClick = () => {
-        setShowVideo(true); 
+        if (!showVideo) {
+            setShowVideo(true); 
+        }else {
+            setShowVideo(false);
+        }
+        
     }
     const items = Array(20).fill(null);
 
@@ -86,11 +91,15 @@ export function Movies() {
 
                     <div className="w-full h-[30%] mt-3">
                         {showVideo && (
-                            <div className="w-[40rem] h-[22rem] flex  items-center">
-                                <video width="800" controls autoPlay className="rounded-2xl">
-                                    <source src="video.mp4" type="video/mp4" />
-                                    Your browser does not support the video tag.
-                                </video>
+                            <div className="gap-2 w-fit relative flex flex-row">
+                                <div className="h-full flex  items-center">
+                                    <video width="500" controls autoPlay className="rounded-2xl">
+                                        <source src="video.mp4" type="video/mp4" />
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+
+                                <button onClick={handleClick} className="size-8 absolute top-0 right-0 mt-2 mr-2  text-white font-bold rounded-full">x</button>
                             </div>
                         )}
                     </div>
