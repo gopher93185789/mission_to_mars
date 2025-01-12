@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { GenreSelect } from "../components/movies/Genre";
 import { Rings } from "../components/Rings";
 
@@ -12,6 +12,10 @@ export function Movies() {
 
     const items = Array(20).fill(null);
 
+    useEffect(() => {
+        setShowVideo(false)
+    }, [currGenre])
+
     return (
         <>
             <Rings />
@@ -22,17 +26,6 @@ export function Movies() {
                 </div>
 
                 <div className="w-full h-full flex-grow-0 overflow-hidden flex flex-col gap-5">
-                    <div className="w-full h-[30%] mt-3">
-                        {showVideo && (
-                            <div className="w-[40rem] h-[22rem] flex  items-center">
-                                <video width="800" controls autoPlay className="rounded-2xl">
-                                    <source src="video.mp4" type="video/mp4" />
-                                    Your browser does not support the video tag.
-                                </video>
-                            </div>
-                        )}
-                    </div>
-
                     <p className="text-white font-bold text-2xl h-fit">Continue watching</p>
                     <div className="w-full h-[25%]  overflow-scroll  py-2 scrollbar scrollbar-track-neutral-950 scrollbar-thumb-neutral-800 overflow-y-hidden overflow-x-auto flex flex-row gap-5">
                         {items.map((_, index) => (
@@ -57,6 +50,17 @@ export function Movies() {
                             </button>
                         ))}
 
+                    </div>
+
+                    <div className="w-full h-[30%] mt-3">
+                        {showVideo && (
+                            <div className="w-[40rem] h-[22rem] flex  items-center">
+                                <video width="800" controls autoPlay className="rounded-2xl">
+                                    <source src="video.mp4" type="video/mp4" />
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>
