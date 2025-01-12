@@ -4,6 +4,7 @@ import { Home } from "./pages/Home";
 import { StarCanvas } from "./components/StarCanvas";
 import { Entertainment } from "./pages/Entertainment";
 import { Ebooks } from "./pages/Ebooks/Ebooks";
+import { Playground } from "./pages/Playground";
 
 
 
@@ -18,7 +19,7 @@ export default function App() {
           <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/home" element={<Home />} />
           <Route path="/entertainment" element={<Entertainment />}  />
-          <Route path="/Flight"  />
+          <Route path="/Playground" element={<Playground />}  />
           <Route path="/Library" element={<Ebooks />}  />
         </Routes>
       </BrowserRouter>

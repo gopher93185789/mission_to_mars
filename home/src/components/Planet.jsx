@@ -5,7 +5,7 @@ import { OrbitControls, useGLTF } from '@react-three/drei';
 
 function RotatingModel({position}) {
   const modelRef = useRef();
-  const { scene } = useGLTF('mars.glb');  
+  const { scene } = useGLTF('models/mars.glb');  
 
  
   const [rotation, setRotation] = useState([0, 0, 0]);
