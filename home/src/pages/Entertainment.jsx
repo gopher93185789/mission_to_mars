@@ -100,7 +100,7 @@ export function Entertainment() {
                         {featured.length > 0 ? featured.map((item, idx) => (
                             <div key={idx} onClick={handleClick} className="aspect-video hover:cursor-pointer relative bg-black group overflow-hidden rounded-xl">
                                 <img draggable={"false"} src={item.link} className="z-0 group-hover:scale-110 duration-500 ease-in-out w-full h-full absolute top-0 left-0" />
-                                <div className="w-full h-1/4 absolute left-0 pt-0 pl-3 pb-3 bottom-0 mt-auto backdrop-blur-sm ">
+                                <div className="w-full h-[23%] absolute left-0 pt-0 pl-3 pb-3 bottom-0 mt-auto backdrop-blur-sm ">
                                     <div className="w-full h-full flex flex-col">
                                         <p className="text-left text-white text-lg font-bold">{item.title}</p>
                                         <p className="text-left text-white text-opacity-50 text-sm">{item.release}</p>
@@ -118,7 +118,7 @@ export function Entertainment() {
                             <div key={index} className="aspect-video flex-shrink-0 overflow-hidden rounded-xl relative">
                                 <img draggable={"false"} src={item.link} className="z-0 w-full opacity-70 h-full absolute top-0 left-0" />
   
-                                <div className="w-full h-1/3 absolute left-0 pt-0 pl-3 pb-4 bottom-0 mt-auto backdrop-blur-sm ">
+                                <div className="w-full h-[30%] absolute left-0 pt-0 pl-3 pb-4 bottom-0 mt-auto backdrop-blur-sm ">
                                     <div className="w-full  h-full flex flex-row">
                                         <div className="w-4/5">
                                             <p className="text-left text-nowrap text-white text-lg font-bold">{item.title}</p>
@@ -143,7 +143,7 @@ export function Entertainment() {
                             <div key={index} className="aspect-video flex-shrink-0 overflow-hidden rounded-xl relative">
                                 <img draggable={"false"} src={item.link} className="z-0 w-full opacity-70 h-full absolute top-0 left-0" />
   
-                                <div className="w-full h-1/3 absolute left-0 pt-0 pl-3 pb-4 bottom-0 mt-auto backdrop-blur-sm ">
+                                <div className="w-full h-[30%] absolute left-0 pt-0 pl-3 pb-4 bottom-0 mt-auto backdrop-blur-sm ">
                                     <div className="w-full  h-full flex flex-row">
                                         <div className="w-4/5">
                                             <p className="text-left text-nowrap text-white text-lg font-bold">{item.title}</p>
