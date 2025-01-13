@@ -15,7 +15,7 @@ const keys = [
 ];
 
 
-export function Navbar() {
+export function Navbar({pages = keys}) {
     const path = window.location.pathname
     const [enter, SetEnter] = useState(false)
 
@@ -29,7 +29,7 @@ export function Navbar() {
     
     return (
         <div className="gap-12 mt-10 flex justify-center select-none flex-row">
-            {keys.map((item, idx) => (
+            {pages.map((item, idx) => (
                 <div className="w-full flex justify-center items-center" key={idx}>
                     <p onClick={() => {setClick(item.itemname)}} onMouseEnter={() => SetEnter(true)} onMouseLeave={() => SetEnter(false)} className={`w-full text-lg text-center text-white hover:text-opacity-100 ${enter ? "text-opacity-50" : evalpath(item.link, path) } duration-300 ease-in-out hover:cursor-pointer hover:scale-110 will-change-transform`}>
                         <a href={item.link}>{item.itemname}</a>
