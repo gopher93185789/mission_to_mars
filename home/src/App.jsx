@@ -10,7 +10,7 @@ import { Playground } from "./pages/Playground";
 
 export default function App() {
   return (
-    <div className="h-screen overflow-hidden font-jakarta w-screen  select-none flex flex-col items-center ">
+    <div className="h-screen  overflow-hidden font-jakarta w-screen  select-none flex flex-col items-center ">
       <Navbar />
       
       <StarCanvas numStars={300} width={window.innerWidth} />
@@ -18,9 +18,17 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/entertainment" element={<Entertainment />}  />
-          <Route path="/Playground" element={<Playground />}  />
+          <Route path="/flight"  />
           <Route path="/Library" element={<Ebooks />}  />
+          <Route path="/games"  />
+          <Route path="/entertainment" element={<Entertainment />}  />
+          <Route path="/fitness"  />
+          <Route path="/music"  />
+          <Route path="/food"  />
+          <Route path="/vr"  />
+          <Route path="/cameras"  />
+          <Route path="/Playground" element={<Playground />}  />
+          
         </Routes>
       </BrowserRouter>
     </div>

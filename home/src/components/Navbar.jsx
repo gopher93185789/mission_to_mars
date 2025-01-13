@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import {useState } from "react";
 
 const keys = [
     { itemname: "Home", link: "/home" },                       
@@ -9,9 +9,9 @@ const keys = [
     { itemname: "Fitness", link: "/fitness" },            
     { itemname: "Music", link: "/music" },        
     { itemname: "Food", link: "/food" },   
-    { itemname: "VR", link: "/VR" }, 
-    { itemname: "Webcam", link: "/webcam" },
-    { itemname: "Playground", link: "/Playground" },                   
+    { itemname: "VR", link: "/vr" }, 
+    { itemname: "Webcam", link: "/cameras" },
+    { itemname: "Playground", link: "/playground" },                   
 ];
 
 
