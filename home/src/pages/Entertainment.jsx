@@ -126,7 +126,7 @@ export function Entertainment() {
                                         </div>
                                         <div className="w-2/12 flex items-center justify-end"> 
                                             <button onClick={handleClick}>
-                                                <img draggable={"false"} src="play-button.png" className="w-12 mt-1 h-12 hover:scale-110 duration-300 ease-in-out will-change-transform  " />
+                                                <img draggable={"false"} src="play.png" className="w-12 mt-1 h-12 hover:scale-110 duration-300 ease-in-out will-change-transform  " />
                                             </button>
                                         </div>
 
@@ -151,7 +151,7 @@ export function Entertainment() {
                                         </div>
                                         <div className="w-2/12 flex items-center justify-end"> 
                                             <button onClick={handleClick}>
-                                                <img draggable={"false"} src="play-button.png" className="w-12 mt-1 h-12 hover:scale-110 duration-300 ease-in-out will-change-transform  " />
+                                                <img draggable={"false"} src="play.png" className="w-12 mt-1 h-12 hover:scale-110 duration-300 ease-in-out will-change-transform  " />
                                             </button>
                                         </div>
 
