@@ -23,7 +23,6 @@ export function Playground() {
             if (event.key === 'Escape'){
                 setModel('')
             };
-            console.log(`Key pressed: ${event.key}`);
         };
 
         window.addEventListener("keydown", handleKeyPress);

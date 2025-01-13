@@ -10,10 +10,10 @@ import { Playground } from "./pages/Playground";
 
 export default function App() {
   return (
-    <div className="h-screen  overflow-hidden font-jakarta w-screen  select-none flex flex-col items-center ">
+    <div className="h-screen  overflow-hidden font-jakarta  select-none flex flex-col items-center ">
       <Navbar />
       
-      <StarCanvas numStars={300} width={window.innerWidth} />
+      <StarCanvas numStars={300} />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Navigate to="/home" />} />

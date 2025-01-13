@@ -2,7 +2,7 @@ import { useRef, useEffect } from "react";
 
 
 
-export function StarCanvas({numStars=100, height=window.innerHeight, width=(window.innerWidth/4)*3}) {
+export function StarCanvas({numStars=100, height=(window.innerHeight), width=(window.innerWidth/4)*3}) {
     const canvasRef = useRef(null);
     
         useEffect(() => {
@@ -59,12 +59,15 @@ export function StarCanvas({numStars=100, height=window.innerHeight, width=(wind
     
 
         return (
+            <div className="absolute top-0 left-0 -z-10 rounded-tr-[50%] w-full h-full overflow-hidden">
             <canvas 
                 ref={canvasRef} 
                 width={width} 
                 height={height} 
-                className="absolute top-0 left-0 -z-10 overflow-hidden rounded-tr-[50%] ">
+                >
              </canvas>
+            </div>
+
         )
 
 }
