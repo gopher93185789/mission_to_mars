@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { GenreSelect } from "../components/movies/Genre";
 import { Rings } from "../components/Rings";
+import { FaPlay } from 'react-icons/fa'
 
 
 const defaultShows = [
@@ -124,7 +125,7 @@ export function Entertainment() {
                                         </div>
                                         <div className="w-2/12 flex items-center justify-end"> 
                                             <button onClick={handleClick}>
-                                                <img draggable={"false"} src="play.png" className="w-12 mt-1 h-12 hover:scale-110 duration-300 ease-in-out will-change-transform  " />
+                                                <FaPlay className="text-green-800 hover:scale-110 duration-300 active:scale-95 ease-in-out hover:text-green-900 size-7" />
                                             </button>
                                         </div>
 
@@ -149,7 +150,7 @@ export function Entertainment() {
                                         </div>
                                         <div className="w-2/12 flex items-center justify-end"> 
                                             <button onClick={handleClick}>
-                                                <img draggable={"false"} src="play.png" className="w-12 mt-1 h-12 hover:scale-110 duration-300 ease-in-out will-change-transform  " />
+                                                <FaPlay className="text-green-800 hover:scale-110 duration-300 active:scale-95 ease-in-out hover:text-green-900 size-7" />
                                             </button>
                                         </div>
 
