@@ -20,7 +20,7 @@ export function SongBanner({id, title = "curated playlist", mainText = "R&B Hits
                 </div>
             </div>
             <div className="w-1/2 overflow-clip h-full flex justify-end">
-                <img className="group-hover:scale-105 duration-500 delay-200 ease-in-out will-change-transform h-full" src="weeknd.png" />
+                <img draggable="false" className="group-hover:scale-105 duration-500 delay-200 ease-in-out will-change-transform h-full" src="weeknd.png" />
             </div>
         </div>
     )

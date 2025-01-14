@@ -29,7 +29,6 @@ export default function App() {
           <Route path="/vr"  />
           <Route path="/cameras"  />
           <Route path="/Playground" element={<Playground />}  />
-          
         </Routes>
       </BrowserRouter>
     </div>
