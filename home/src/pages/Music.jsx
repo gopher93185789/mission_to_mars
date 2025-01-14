@@ -1,15 +1,21 @@
 import { useRef, useState } from "react";
-import { FaHeart, FaPlay } from 'react-icons/fa'
+import { FaHeart, FaPause, FaPlay } from 'react-icons/fa'
+import { VolumeSlider } from "../components/VolumeSlider";
 
 export function Music() {
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
     const [scrollLeft, setScrollLeft] = useState(0);
+    const [play, setPlay] = useState(false)
 
     const mu1 = useRef(null);
     const mu2 = useRef(null);
     const mu3 = useRef(null);
     const mu4 = useRef(null);
+
+    const handlePlay = () => {
+        play ? setPlay(false) : setPlay(true)
+    }
 
     const handleDown = (e, scrollAreaRef) => {
         setIsDragging(true);
@@ -77,67 +83,21 @@ export function Music() {
                                         <p className="text-opacity-70 text-white h-fit  text-left text-lg  w-full font-bold">J-Cole </p>
                                         <p className="text-opacity-50 text-white h-fit  text-left text-lg  w-full font-bold">You</p>
                                     </div>
-                                    <button className="opacity-0 flex group-hover:opacity-100 duration-500  ease-in-out w-1/6 h-full  items-center justify-center"> <FaPlay className="text-green-800 hover:scale-110 duration-300 active:scale-95 ease-in-out hover:text-green-900 size-7" /></button>
+                                    <button onClick={() => handlePlay()} className="opacity-0 flex group-hover:opacity-100 duration-500  ease-in-out w-1/6 h-full  items-center justify-center"> 
+                                        {play ? <FaPause className="text-green-800 hover:scale-110 duration-300 active:scale-95 ease-in-out hover:text-green-900 size-7" /> : <FaPlay className="text-green-800 hover:scale-110 duration-300 active:scale-95 ease-in-out hover:text-green-900 size-7" />}
+                                        </button>
                                 </div>
                             </div>
                         ))}
                     </div>
-                    
-                    <p className="text-white text-xl rounded-xl py-1 px-2 font-bold  mt-3">Explore</p>
-                    <div ref={mu2} onMouseUp={() => handleMouseUp(mu2)} onMouseMove={(e) => handleMouseMove(e, mu2)} onMouseDown={(e) => handleDown(e, mu2)} onMouseLeave={() => handleMouseLeave(mu2)} className="h-fit   w-full mt-4 overflow-x-auto scrollbar-none scrollbar-thin flex flex-row gap-5 ">
-                        {items.map((_, idx) => (
-                            <div key={idx} className="h-80 w-64 group flex-shrink-0 rounded-xl p-3 gap-2 flex bg-neutral-950 hover:bg-neutral-900 duration-500 ease-in-out flex-col ">
-                                <img draggable={"false"} src="mocro.png" className="aspect-square rounded-lg " />
-                                <div className=" flex flex-row">
-                                    <div className="w-5/6 truncate flex items-center flex-col">
-                                        <p className="text-opacity-70 text-white h-fit  text-left text-lg  w-full font-bold">El-Chapo </p>
-                                        <p className="text-opacity-50 text-white h-fit  text-left text-lg  w-full font-bold">MocroManiac</p>
-                                    </div>
-                                    <button className="hidden group-hover:flex duration-300 ease-in-out w-1/6 h-full  items-center justify-center"> <FaPlay className="text-green-800 hover:scale-110 duration-300 active:scale-95 ease-in-out hover:text-green-900 size-7" /></button>
-                                </div>
-                            </div>
-                        ))}
-                    </div> 
-                    
-                    <p className="text-white text-xl rounded-xl py-1 px-2 font-bold  mt-3">Moody</p>
-                    <div ref={mu3} onMouseUp={() => handleMouseUp(mu3)} onMouseMove={(e) => handleMouseMove(e, mu3)} onMouseDown={(e) => handleDown(e, mu3)} onMouseLeave={() => handleMouseLeave(mu3)} className="h-fit   w-full mt-4 overflow-x-auto scrollbar-none scrollbar-thin flex flex-row gap-5 ">
-                        {items.map((_, idx) => (
-                            <div key={idx} className="h-80 w-64 group flex-shrink-0 rounded-xl p-3 gap-2 flex bg-neutral-950 hover:bg-neutral-900 duration-500 ease-in-out flex-col ">
-                                <img draggable={"false"} src="jscole.png" className="aspect-square rounded-lg " />
-                                <div className=" flex flex-row">
-                                    <div className="w-5/6 truncate flex items-center flex-col">
-                                        <p className="text-opacity-70 text-white h-fit  text-left text-lg  w-full font-bold">J-Cole </p>
-                                        <p className="text-opacity-50 text-white h-fit  text-left text-lg  w-full font-bold">You</p>
-                                    </div>
-                                    <button className="hidden group-hover:flex duration-300 ease-in-out w-1/6 h-full  items-center justify-center"> <FaPlay className="text-green-800 hover:scale-110 duration-300 active:scale-95 ease-in-out hover:text-green-900 size-7" /></button>
-                                </div>
-                            </div>
-                        ))}
-                    </div> 
-                    
-                    <p className="text-white text-xl rounded-xl py-1 px-2 font-bold  mt-3">Sigma</p>
-                    <div ref={mu4} onMouseUp={() => handleMouseUp(mu4)} onMouseMove={(e) => handleMouseMove(e, mu4)} onMouseDown={(e) => handleDown(e, mu4)} onMouseLeave={() => handleMouseLeave(mu4)} className="h-fit   w-full mt-4 overflow-x-auto scrollbar-none scrollbar-thin flex flex-row gap-5 ">
-                        {items.map((_, idx) => (
-                            <div key={idx} className="h-80 w-64 group flex-shrink-0 rounded-xl p-3 gap-2 flex bg-neutral-950 hover:bg-neutral-900 duration-500 ease-in-out flex-col ">
-                                <img draggable={"false"} src="mocro.png" className="aspect-square rounded-lg " />
-                                <div className=" flex flex-row">
-                                    <div className="w-5/6 truncate flex items-center flex-col">
-                                        <p className="text-opacity-70 text-white h-fit  text-left text-lg  w-full font-bold">El-Chapo </p>
-                                        <p className="text-opacity-50 text-white h-fit  text-left text-lg  w-full font-bold">MocroManiac</p>
-                                    </div>
-                                    <button className="hidden group-hover:flex duration-300 ease-in-out w-1/6 h-full  items-center justify-center"> <FaPlay className="text-green-800 hover:scale-110 duration-300 active:scale-95 ease-in-out hover:text-green-900 size-7" /></button>
-                                </div>
-                            </div>
-                        ))}
-                    </div> 
-
-
                 </div>
 
-                <div id="side2" className="h-[75vh]  w-2/12 backdrop-blur-xl border  rounded-xl"></div>
+                <div id="side2" className="h-[75vh]  w-2/12 backdrop-blur-xl border rounded-xl"></div>
             </div>
             
-            <div id="play-bar" className="px-34 w-2/4 h-24 backdrop-blur-xl border rounded-xl"></div>
+            <div id="play-bar" className="px-34 w-2/4 h-24 backdrop-blur-xl flex flex-col items-center justify-center border rounded-xl">
+                <VolumeSlider play={play} />
+            </div>
         </div>
  
     )
