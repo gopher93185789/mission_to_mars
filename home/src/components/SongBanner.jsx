@@ -1,8 +1,8 @@
 import { FaHeart } from 'react-icons/fa'
 
-export function SongBanner({title = "curated playlist", mainText = "R&B Hits", subText = "the Weeknd, Usher, Kendrick Lamar, Diddy, Byson Tiller, Tory Lanez", likesText = "50,056 Likes", songAndTimeText = "213 Songs, 13 hr 7 min" }) {
+export function SongBanner({id, title = "curated playlist", mainText = "R&B Hits", subText = "the Weeknd, Usher, Kendrick Lamar, Diddy, Byson Tiller, Tory Lanez", likesText = "50,056 Likes", songAndTimeText = "213 Songs, 13 hr 7 min" }) {
     return  (
-        <div className="h-[540px]  w-full rounded-3xl overflow-hidden flex group  bg-orange-700">
+        <div id={id} className="h-[540px]  w-full rounded-3xl overflow-hidden flex group  bg-orange-700">
             <div className="w-1/2 h-full px-20 pt-32 pb-16 flex flex-col gap-5">
 
                 <p className="px-1 w-full text-left text-xl text-white">{title}</p >
