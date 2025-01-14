@@ -5,6 +5,7 @@ import { StarCanvas } from "./components/StarCanvas";
 import { Entertainment } from "./pages/Entertainment";
 import { Ebooks } from "./pages/Ebooks/Ebooks";
 import { Playground } from "./pages/Playground";
+import { Music } from "./pages/Music";
 
 
 
@@ -23,7 +24,7 @@ export default function App() {
           <Route path="/games"  />
           <Route path="/entertainment" element={<Entertainment />}  />
           <Route path="/fitness"  />
-          <Route path="/music"  />
+          <Route path="/music" element={<Music />}  />
           <Route path="/food"  />
           <Route path="/vr"  />
           <Route path="/cameras"  />

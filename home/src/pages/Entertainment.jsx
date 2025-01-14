@@ -45,7 +45,6 @@ export function Entertainment() {
         }
         
     }
-    const items = Array(6).fill(null);
 
     useEffect(() => {
         setShowVideo(false)
@@ -88,7 +87,6 @@ export function Entertainment() {
     return (
         <>
             <Rings />
-
             <div className="w-full h-full mt-20 px-44 pb-5 flex flex-row ">
                 <div className="w-1/12 flex flex-col gap-5">
                     <GenreSelect sg={(genre) => setCurrGenre(genre)} currGenre={currGenre} />
@@ -96,11 +94,11 @@ export function Entertainment() {
 
                 <div className="w-full h-full mt-1 flex-grow-0 overflow-hidden flex flex-col gap-5">
                     <p className="text-white font-bold text-lg h-fit">Featured</p>
-                    <div className="w-full h-[30%]  overflow-scroll  py-1 scrollbar-thin scrollbar-track-neutral-950 scrollbar-thumb-neutral-800 overflow-y-hidden overflow-x-auto flex flex-row gap-5">
+                    <div className="w-full h-[30%]  overflow-scroll py-1 scrollbar-thin scrollbar-track-neutral-950 scrollbar-thumb-neutral-800 overflow-y-hidden overflow-x-auto flex flex-row gap-5">
                         {featured.length > 0 ? featured.map((item, idx) => (
                             <div key={idx} onClick={handleClick} className="aspect-video hover:cursor-pointer relative bg-black group overflow-hidden rounded-xl">
                                 <img draggable={"false"} src={item.link} className="z-0 group-hover:scale-110 duration-500 ease-in-out w-full h-full absolute top-0 left-0" />
-                                <div className="w-full h-[23%] absolute left-0 pt-0 pl-3 pb-3 bottom-0 mt-auto backdrop-blur-sm ">
+                                <div className="w-full h-[23%] absolute left-0 pt-0 pl-3 pb-3 bottom-0 mt-auto backdrop-blur-sm">
                                     <div className="w-full h-full flex flex-col">
                                         <p className="text-left text-white text-lg font-bold">{item.title}</p>
                                         <p className="text-left text-white text-opacity-50 text-sm">{item.release}</p>
@@ -119,7 +117,7 @@ export function Entertainment() {
                                 <img draggable={"false"} src={item.link} className="z-0 w-full opacity-70 h-full absolute top-0 left-0" />
   
                                 <div className="w-full h-[30%] absolute left-0 pt-0 pl-3 pb-4 bottom-0 mt-auto backdrop-blur-sm ">
-                                    <div className="w-full  h-full flex flex-row">
+                                    <div className="w-full h-full flex flex-row">
                                         <div className="w-4/5">
                                             <p className="text-left text-nowrap text-white text-lg font-bold">{item.title}</p>
                                             <p className="text-left text-white text-opacity-50 text-sm">{item.release}</p>
