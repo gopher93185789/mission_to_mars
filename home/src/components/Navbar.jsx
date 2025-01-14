@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import {useState } from "react";
 
 const keys = [
     { itemname: "Home", link: "/home" },                       
@@ -9,13 +9,13 @@ const keys = [
     { itemname: "Fitness", link: "/fitness" },            
     { itemname: "Music", link: "/music" },        
     { itemname: "Food", link: "/food" },   
-    { itemname: "VR", link: "/VR" }, 
-    { itemname: "Webcam", link: "/webcam" },
-    { itemname: "Playground", link: "/Playground" },                   
+    { itemname: "VR", link: "/vr" }, 
+    { itemname: "Webcam", link: "/cameras" },
+    { itemname: "Playground", link: "/playground" },                   
 ];
 
 
-export function Navbar() {
+export function Navbar({pages = keys}) {
     const path = window.location.pathname
     const [enter, SetEnter] = useState(false)
 
@@ -29,9 +29,9 @@ export function Navbar() {
     
     return (
         <div className="gap-12 mt-10 flex justify-center select-none flex-row">
-            {keys.map((item, idx) => (
+            {pages.map((item, idx) => (
                 <div className="w-full flex justify-center items-center" key={idx}>
-                    <p onClick={() => {setClick(item.itemname)}} onMouseEnter={() => SetEnter(true)} onMouseLeave={() => SetEnter(false)} className={`w-full text-2xl text-center text-white hover:text-opacity-100 ${enter ? "text-opacity-50" : evalpath(item.link, path) } duration-300 ease-in-out hover:cursor-pointer hover:scale-110 will-change-transform`}>
+                    <p onClick={() => {setClick(item.itemname)}} onMouseEnter={() => SetEnter(true)} onMouseLeave={() => SetEnter(false)} className={`w-full text-lg text-center text-white hover:text-opacity-100 ${enter ? "text-opacity-50" : evalpath(item.link, path) } duration-300 ease-in-out hover:cursor-pointer hover:scale-110 will-change-transform`}>
                         <a href={item.link}>{item.itemname}</a>
                     </p>
                 </div>

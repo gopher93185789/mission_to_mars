@@ -7,7 +7,6 @@ const books = [
     {image: "moby.png", title: "Moby Dick", info: '"An epic tale of a sea captain’s obsession with hunting a giant whale. The story explores adventure, fate, and the power of nature."'},
     {image: "romeo.jpg", title: "Romeo and Juliet", info: '"A timeless love story by Shakespeare. Two young lovers from feuding families face challenges that lead to a tragic end."'},
     {image: "gatsby.jpg", title: "The Great Gatsby", info: '"A story about wealth, love, and the American Dream. Set in the Roaring Twenties, it follows the mysterious Jay Gatsby and his obsession with Daisy."'},
-    
 ]
 
 

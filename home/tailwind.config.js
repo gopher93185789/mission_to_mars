@@ -6,8 +6,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        jakarta: ['"Plus Jakarta Sans"', 'sans-serif'], // Add a custom font-family
+        jakarta: ['"Plus Jakarta Sans"', 'sans-serif'], 
       },
+
     },
   },
   plugins: [

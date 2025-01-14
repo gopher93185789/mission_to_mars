@@ -23,7 +23,6 @@ export function Playground() {
             if (event.key === 'Escape'){
                 setModel('')
             };
-            console.log(`Key pressed: ${event.key}`);
         };
 
         window.addEventListener("keydown", handleKeyPress);
@@ -36,9 +35,9 @@ export function Playground() {
     return (
         <>
             <div className="w-full absolute top-20 h-fit mt-8 z-20 flex flex-row justify-center items-center">
-                <button onClick={() => setModel('models/ship.glb')} className={`text-white w-32 backdrop-blur-lg text-xl font-bold ${model === 'models/ship.glb' ? "text-opacity-100 border-opacity-100" : "text-opacity-50 hover:text-opacity-100"}   active:scale-95 hover:border-opacity-100 duration-300 ease-in-out py-5 border border-white border-opacity-50  rounded-l-xl `}>Ship</button>
-                <button onClick={() => setModel('models/mars.glb')} className={`text-white w-32 backdrop-blur-lg text-xl font-bold ${model === 'models/mars.glb' ? "text-opacity-100 border-opacity-100" : "text-opacity-50 hover:text-opacity-100"}  active:scale-95 hover:border-opacity-100 duration-300 ease-in-out py-5 border border-white border-opacity-50`}>Mars</button>
-                <button onClick={() => setModel('models/base.glb')} className={`text-white w-32 backdrop-blur-lg text-xl font-bold ${model === 'models/base.glb' ? "text-opacity-100 border-opacity-100" : "text-opacity-50 hover:text-opacity-100"}  active:scale-95 hover:border-opacity-100 duration-300 ease-in-out py-5 border border-white border-opacity-50  rounded-r-xl `}>Base</button>
+                <button onClick={() => setModel('models/ship.glb')} className={`text-white w-24 backdrop-blur-lg text-lg font-bold ${model === 'models/ship.glb' ? "text-opacity-100 border-opacity-100" : "text-opacity-50 hover:text-opacity-100"}   active:scale-95 hover:border-opacity-100 duration-300 ease-in-out py-3 border border-white border-opacity-50  rounded-l-lg `}>Ship</button>
+                <button onClick={() => setModel('models/mars.glb')} className={`text-white w-24 backdrop-blur-lg text-lg font-bold ${model === 'models/mars.glb' ? "text-opacity-100 border-opacity-100" : "text-opacity-50 hover:text-opacity-100"}  active:scale-95 hover:border-opacity-100 duration-300 ease-in-out py-3 border border-white border-opacity-50`}>Mars</button>
+                <button onClick={() => setModel('models/base.glb')} className={`text-white w-24 backdrop-blur-lg text-lg font-bold ${model === 'models/base.glb' ? "text-opacity-100 border-opacity-100" : "text-opacity-50 hover:text-opacity-100"}  active:scale-95 hover:border-opacity-100 duration-300 ease-in-out py-3 border border-white border-opacity-50  rounded-r-xl `}>Base</button>
             </div>
 
             {model != '' ?             
