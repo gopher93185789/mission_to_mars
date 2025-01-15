@@ -6,6 +6,7 @@ import { Entertainment } from "./pages/Entertainment";
 import { Ebooks } from "./pages/Ebooks/Ebooks";
 import { Playground } from "./pages/Playground";
 import { Music } from "./pages/Music";
+import { WebCam } from "./pages/WebCam";
 
 
 
@@ -26,7 +27,7 @@ export default function App() {
           <Route path="/music" element={<Music />}  />
           <Route path="/food"  />
           <Route path="/vr"  />
-          <Route path="/cameras"  />
+          <Route path="/cameras" element={<WebCam />}  />
           <Route path="/Playground" element={<Playground />}  />
         </Routes>
       </BrowserRouter>

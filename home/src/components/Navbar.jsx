@@ -10,7 +10,7 @@ const keys = [
     { itemname: "Music", link: "/music" },        
     { itemname: "Food", link: "/food" },   
     { itemname: "VR", link: "/vr" }, 
-    { itemname: "Webcam", link: "/cameras" },
+    { itemname: "Cameras", link: "/cameras" },
     { itemname: "Playground", link: "/playground" },                   
 ];
 
