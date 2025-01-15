@@ -23,7 +23,6 @@ const scroll2 = [
 
 const scroll3 = [
     {title:"DAMN.", artist: "Kendrick Lamar",   duration:"234" , link:"" , image:"songs/kendo.png"},
-    {title:"El chapo", artist: "mocromaniac",   duration:"234" , link:"" , image:"songs/mocro.png"},
     {title:"Street Gossip", artist: "Lil Baby", duration:"234" , link:"music/baby.mp3" , image:"songs/baby2.png"},
     {title:"Trapsoul", artist: "Bryson Tiller", duration:"234" , link:"music/bryson.mp3"  , image:"songs/trap.png"},
     {title:"JORDY", artist: "Jordymone9",       duration:"234" , link:"" , image:"songs/jordy.png"},
@@ -132,7 +131,9 @@ export function Music() {
     return (
         <div className="h-full w-full mt-5 p-5 flex items-center flex-col gap-5 ">
                            
-            <audio ref={audioRef} className="absolute hidden" src={playingPath} />
+            <audio ref={audioRef} className="absolute hidden" src={playingPath} onEnded={() => (
+                setPlay(false)
+            )} />
 
             <div className="w-4/5 h-[87vh] rounded-xl  flex gap-5">
                 <div id="side1" className="h-[87vh] w-2/12 flex flex-col gap-3 rounded-xl ">
