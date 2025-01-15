@@ -115,7 +115,7 @@ export function Entertainment() {
                     <div ref={exploreRef} onMouseUp={() => handleMouseUp(exploreRef)} onMouseMove={(e) => handleMouseMove(e, exploreRef)} onMouseDown={(e) => handleDown(e, exploreRef)} onMouseLeave={() => handleMouseLeave(exploreRef)} className="w-full h-[25%]  overflow-scroll  py-2 scrollbar-thin scrollbar-track-neutral-950 scrollbar-thumb-neutral-800 overflow-y-hidden overflow-x-auto flex flex-row gap-5">
                         {movies.length > 0 ? movies.map((item, index) => (
                             <div key={index} className="aspect-video flex-shrink-0 overflow-hidden rounded-xl relative">
-                                <img draggable={"false"} src={item.link} className="z-0 w-full opacity-70 h-full absolute top-0 left-0" />
+                                <img draggable={"false"} src={item.link} className="z-0 w-full opacity-100 h-full absolute top-0 left-0" />
   
                                 <div className="w-full h-[30%] absolute left-0 pt-0 pl-3 pb-4 bottom-0 mt-auto backdrop-blur-sm ">
                                     <div className="w-full h-full flex flex-row">
