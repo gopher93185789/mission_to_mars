@@ -6,26 +6,26 @@ import { FaFolder, FaHome, FaMusic, FaSpotify } from "react-icons/fa";
 
 
 const scroll1 = [
-    {title:"2014 Forest Hill Drive", artist: "J-cole",          duration:"234" , link:"music/cole.mp3" , image:"songs/jscole.png"},
-    {title:"X's", artist: "Cigarettes After Sex",       duration:"234" , link:"music/cas.mp3" , image:"songs/cas.png"},
-    {title:"Harder Than Hard", artist: "Lil Baby",      duration:"234" , link:"music/baby.mp3" , image:"songs/baby.png"},
-    {title:"Madvilliany", artist: "Madvillian",         duration:"234" , link:"music/doom.mp3" , image:"songs/madvillinay.png"},
-    {title:"PARTYNEXTDOOR", artist: "PARTYNEXTDOOR",    duration:"234" , link:"music/pnd.mp3" , image:"songs/party.png"},
+    {title:"2014 Forest Hill Drive", artist: "J-cole",          duration:"" , link:"music/cole.mp3" , image:"songs/jscole.png"},
+    {title:"X's", artist: "Cigarettes After Sex",       duration:"" , link:"music/cas.mp3" , image:"songs/cas.png"},
+    {title:"Harder Than Hard", artist: "Lil Baby",      duration:"" , link:"music/baby.mp3" , image:"songs/baby.png"},
+    {title:"Madvilliany", artist: "Madvillian",         duration:"" , link:"music/doom.mp3" , image:"songs/madvillinay.png"},
+    {title:"PARTYNEXTDOOR", artist: "PARTYNEXTDOOR",    duration:"" , link:"music/pnd.mp3" , image:"songs/party.png"},
 ]
 
 const scroll2 = [
-    {title:"Gradution", artist: "Kanye West",       duration:"234" , link:"" , image:"songs/grad.png"},
-    {title:"Man On The Moon 3", artist: "Kid Cudi", duration:"234" , link:"music/cudi.mp3" , image:"songs/mom.png"},
-    {title:"Views", artist: "Drake",                duration:"234" , link:"music/drake.mp3" , image:"songs/views.png"},
-    {title:"I Told You", artist: "Tory Lanez",      duration:"234" , link:"music/tory.mp3" , image:"songs/tory.png"},
-    {title:"El chapo", artist: "mocromaniac",       duration:"234" , link:"" , image:"songs/mocro.png"},
+    {title:"Gradution", artist: "Kanye West",       duration:"" , link:"" , image:"songs/grad.png"},
+    {title:"Man On The Moon 3", artist: "Kid Cudi", duration:"" , link:"music/cudi.mp3" , image:"songs/mom.png"},
+    {title:"Views", artist: "Drake",                duration:"" , link:"music/drake.mp3" , image:"songs/views.png"},
+    {title:"I Told You", artist: "Tory Lanez",      duration:"" , link:"music/tory.mp3" , image:"songs/tory.png"},
+    {title:"El chapo", artist: "mocromaniac",       duration:"" , link:"" , image:"songs/mocro.png"},
 ]
 
 const scroll3 = [
-    {title:"DAMN.", artist: "Kendrick Lamar",   duration:"234" , link:"" , image:"songs/kendo.png"},
-    {title:"Street Gossip", artist: "Lil Baby", duration:"234" , link:"music/baby.mp3" , image:"songs/baby2.png"},
-    {title:"Trapsoul", artist: "Bryson Tiller", duration:"234" , link:"music/bryson.mp3"  , image:"songs/trap.png"},
-    {title:"JORDY", artist: "Jordymone9",       duration:"234" , link:"" , image:"songs/jordy.png"},
+{title:"DAMN.", artist: "Kendrick Lamar",       duration:"" , link:"" , image:"songs/kendo.png"},
+    {title:"Street Gossip", artist: "Lil Baby", duration:"" , link:"music/baby.mp3" , image:"songs/baby2.png"},
+    {title:"Trapsoul", artist: "Bryson Tiller", duration:"" , link:"music/bryson.mp3"  , image:"songs/trap.png"},
+    {title:"JORDY", artist: "Jordymone9",       duration:"" , link:"" , image:"songs/jordy.png"},
 ]
 
 const all = [...scroll1, ...scroll2, ...scroll3]
@@ -129,7 +129,7 @@ export function Music() {
 
 
     return (
-        <div className="h-full w-full mt-5 p-5 flex items-center flex-col gap-5 ">
+        <div className="h-full w-full mt-5 p-5 flex  items-center flex-col gap-5 ">
                            
             <audio ref={audioRef} className="absolute hidden" src={playingPath} onEnded={() => (
                 setPlay(false)
