@@ -9,11 +9,26 @@ import { Music } from "./pages/Music";
 import { WebCam } from "./pages/WebCam";
 
 
+const pages = [
+    { itemname: "Home", link: "/home" },   
+    { itemname: "Music", link: "/music" },    
+    { itemname: "Entertainment", link: "/entertainment" },                                
+    { itemname: "Library", link: "/Library" },   
+    { itemname: "Games", link: "/games" },
+    { itemname: "Flight", link: "/flight" }, 
+    { itemname: "Fitness", link: "/fitness" },            
+    { itemname: "Food", link: "/food" },   
+    { itemname: "VR", link: "/vr" }, 
+    { itemname: "Cameras", link: "/cameras" },
+    { itemname: "Playground", link: "/playground" },                   
+];
+
+
 
 export default function App() {
   return (
     <div className="h-screen  overflow-hidden font-jakarta  select-none flex flex-col items-center ">
-      <Navbar />
+      <Navbar pages={pages} />
       <StarCanvas numStars={300} />
       <BrowserRouter>
         <Routes>

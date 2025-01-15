@@ -56,7 +56,7 @@ export function Music() {
                 <ScrollBox  setPlayingPath={setPlayingPath} audioref={audioref} play={play} setPlay={setPlay} playing={playing} setPlaying={setPlaying} items={scroll1} />
                 <p id="Album" className="text-white text-xl rounded-xl py-1 px-2 font-bold  mt-3">Recommended</p>
                 <ScrollBox  setPlayingPath={setPlayingPath} audioref={audioref} play={play} setPlay={setPlay} playing={playing} setPlaying={setPlaying} items={scroll2} />
-                <p className="text-white text-xl rounded-xl py-1 px-2 font-bold  mt-3">Explore</p>
+                <p id="Genres" className="text-white text-xl rounded-xl py-1 px-2 font-bold  mt-3">Explore</p>
                 <ScrollBox  setPlayingPath={setPlayingPath} audioref={audioref} play={play} setPlay={setPlay} playing={playing} setPlaying={setPlaying} items={scroll3} />
             </>
         )
@@ -107,7 +107,7 @@ export function Music() {
             <div className="px-10 py-5 flex flex-col gap-5">
                 {songs.map((item, idx) => (
                     <div key={idx} className="w-full  h-24 p-2 shadow-lg shadow-neutral-950 bg-neutral-950 rounded-xl hover:scale-[102%] will-change-transform duration-300 flex flex-row ease-in-out">
-                        <img className="h-full rounded-md aspect-square" src={item.image} />
+                        <img className="h-full rounded-md aspect-square" draggable={"false"} src={item.image} />
                         <div className="w-fit mx-4 h-full flex flex-col justify-center">
                             <p className="text-opacity-100 text-white h-fit  text-left text-lg  w-full font-bold">{item.title}  </p>
                             <p className="text-opacity-50 text-white h-fit  text-left text-lg  w-full font-bold">{item.artist} </p>
@@ -149,14 +149,14 @@ export function Music() {
                             <p className={`w-full text-white ${section === 'Album' ? "text-opacity-100": "text-opacity-50 group-hover:text-opacity-100"}  duration-300 ease-in-out text-left`}>Albums</p>
                         </button>
 
+                        <button onClick={() => setSection("Genres")} className="w-full group bg-gradient-to-br bg-neutral-950  active:scale-95 px-5 h-10 items-center shadow-neutral-950 shadow-lg hover:scale-105 will-change-transform duration-300 ease-in-out rounded-xl flex flex-row gap-4">
+                            <FaSpotify className={`text-white ${section === 'Genres' ? "text-opacity-100": "text-opacity-50 group-hover:text-opacity-100"}  duration-300 ease-in-out delay-100 size-6`} />
+                            <p className={`w-full text-white ${section === 'Genres' ? "text-opacity-100": "text-opacity-50 group-hover:text-opacity-100"}  duration-300 ease-in-out text-left`}>Genres</p>
+                        </button>
+
                         <button onClick={() => setSection("Tracks")} className="w-full group bg-gradient-to-br bg-neutral-950  active:scale-95 px-5 h-10 items-center shadow-neutral-950 shadow-lg hover:scale-105 will-change-transform duration-300 ease-in-out rounded-xl flex flex-row gap-4">
                             <FaMusic className={`text-white ${section === 'Tracks' ? "text-opacity-100": "text-opacity-50 group-hover:text-opacity-100"}  duration-300 ease-in-out delay-100 size-6`} />
                             <p className={`w-full text-white ${section === 'Tracks' ? "text-opacity-100": "text-opacity-50 group-hover:text-opacity-100"}  duration-300 ease-in-out text-left`}>Tracks</p>
-                        </button>
-
-                        <button className="w-full group bg-gradient-to-br bg-neutral-950  active:scale-95 px-5 h-10 items-center shadow-neutral-950 shadow-lg hover:scale-105 will-change-transform duration-300 ease-in-out rounded-xl flex flex-row gap-4">
-                            <FaSpotify className={`text-white ${section === 'Genres' ? "text-opacity-100": "text-opacity-50 group-hover:text-opacity-100"}  duration-300 ease-in-out delay-100 size-6`} />
-                            <p className={`w-full text-white ${section === 'Genres' ? "text-opacity-100": "text-opacity-50 group-hover:text-opacity-100"}  duration-300 ease-in-out text-left`}>Genres</p>
                         </button>
                     </div>
 
@@ -185,6 +185,7 @@ export function Music() {
                                     className="w-full h-full rounded-lg object-cover" 
                                     src={all.find(song => song.title === playing).image} 
                                     alt={playing}
+                                    draggable={"false"}
                                 />
                             )}
                         </div>
