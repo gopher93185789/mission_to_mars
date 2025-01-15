@@ -176,7 +176,7 @@ export function Music() {
 
                 
 
-                <div id="side2" className="h-[87vh] w-2/12 backdrop-blur-xl  rounded-xl">
+                <div id="side2" className="h-fit w-2/12 backdrop-blur-xl  rounded-xl">
                     <div className="h-fit w-full p-2 flex flex-col items-center bg-neutral-950 rounded-2xl">
                         <div className="aspect-square w-full bg-neutral-950 rounded-lg">
                             {playing && all.find(song => song.title === playing) && (
