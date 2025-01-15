@@ -13,7 +13,6 @@ export default function App() {
   return (
     <div className="h-screen  overflow-hidden font-jakarta  select-none flex flex-col items-center ">
       <Navbar />
-      
       <StarCanvas numStars={300} />
       <BrowserRouter>
         <Routes>

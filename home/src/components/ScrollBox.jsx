@@ -7,7 +7,7 @@ const defaultSongs = [
 ]
 
 
-export function ScrollBox({items = defaultSongs, play, setPlay, playing, setPlaying}) {
+export function ScrollBox({items = defaultSongs, play, setPlay, playing, setPlaying, audioref, setPlayingPath}) {
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
     const [scrollLeft, setScrollLeft] = useState(0);
@@ -36,13 +36,22 @@ export function ScrollBox({items = defaultSongs, play, setPlay, playing, setPlay
         }
     };
     
-    const handlePlay = (title) => {
-        if (play) {
-            setPlay(false)
-            setPlaying('')
-        }else{
-            setPlay(true)
-            setPlaying(title)
+    const handlePlay = (title, link) => {
+        if (playing === title && play) {
+            setPlay(false);
+            setPlaying('');
+            audioref.current.pause();
+        } else {
+            if (link === '') {
+                return
+            }
+
+            setPlay(true);
+            setPlaying(title);
+            setPlayingPath(link);
+            setTimeout(() => {
+                audioref.current.play();
+            }, 0);
         }
     }
 
@@ -66,7 +75,7 @@ export function ScrollBox({items = defaultSongs, play, setPlay, playing, setPlay
                             <p className="text-opacity-70 text-white h-fit  text-left text-lg  w-full font-bold">{item.title}  </p>
                             <p className="text-opacity-50 text-white h-fit  text-left text-lg  w-full font-bold">{item.artist} </p>
                         </div>
-                        <button onClick={() => handlePlay(item.title)} className={`${item.title === playing ? "" : "opacity-0"} flex group-hover:opacity-100 duration-500  ease-in-out w-1/6 h-full items-center justify-center`}> 
+                        <button onClick={() => handlePlay(item.title, item.link)} className={`${item.title === playing ? "" : "opacity-0"} flex group-hover:opacity-100 duration-500  ease-in-out w-1/6 h-full items-center justify-center`}> 
                             {play ? 
                             handlePlaying(playing, item.title) : 
                             <FaPlay className="text-green-800 will-change-transform hover:scale-110 duration-300 active:scale-95 ease-in-out hover:text-green-900 size-7" />}
