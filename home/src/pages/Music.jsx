@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaPause, FaPlay } from 'react-icons/fa'
 import { ScrollBox } from "../components/ScrollBox";
 import { SongBanner } from "../components/SongBanner";
@@ -46,17 +46,21 @@ export function Music() {
     const HomeSection = () => {
         return (
             <>
-                    <SongBanner id={'Home'} title="Weekly Top 50" /> 
-                    <p className="text-white text-xl rounded-xl py-1 px-2 font-bold  mt-3">Made for you</p>
-                    <ScrollBox play={play} setPlay={setPlay} playing={playing} setPlaying={setPlaying} items={scroll1} />
-                    <p id="Album" className="text-white text-xl rounded-xl py-1 px-2 font-bold  mt-3">Recommended</p>
-                    <ScrollBox play={play} setPlay={setPlay} playing={playing} setPlaying={setPlaying} items={scroll2} />
-                    <p className="text-white text-xl rounded-xl py-1 px-2 font-bold  mt-3">Explore</p>
-                    <ScrollBox play={play} setPlay={setPlay} playing={playing} setPlaying={setPlaying} items={scroll3} />
+                <SongBanner id={'Home'} title="Weekly Top 50" /> 
+                <p className="text-white text-xl rounded-xl py-1 px-2 font-bold  mt-3">Made for you</p>
+                <ScrollBox play={play} setPlay={setPlay} playing={playing} setPlaying={setPlaying} items={scroll1} />
+                <p id="Album" className="text-white text-xl rounded-xl py-1 px-2 font-bold  mt-3">Recommended</p>
+                <ScrollBox play={play} setPlay={setPlay} playing={playing} setPlaying={setPlaying} items={scroll2} />
+                <p className="text-white text-xl rounded-xl py-1 px-2 font-bold  mt-3">Explore</p>
+                <ScrollBox play={play} setPlay={setPlay} playing={playing} setPlaying={setPlaying} items={scroll3} />
             </>
         )
 
     }
+
+    useEffect(() => {
+        console.log(playing)
+    }, [playing])
 
     const Tracks = ({songs, play, setPlay, playing, setPlaying }) => {
         const handlePlay = (title) => {
