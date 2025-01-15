@@ -59,7 +59,7 @@ export function StarCanvas({numStars=100, height=(window.innerHeight), width=(wi
     
 
         return (
-            <div className="absolute top-0 left-0 -z-10 rounded-tr-[50%] w-full h-full overflow-hidden">
+            <div className="absolute top-0 left-0 -z-50 rounded-tr-[50%] w-full h-full overflow-hidden">
             <canvas 
                 ref={canvasRef} 
                 width={width} 
