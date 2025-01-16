@@ -18,20 +18,6 @@ function RotatingModel({model = 'models/mars.glb'}) {
 export function Playground() {
     const [model, setModel] = useState('')
 
-    useEffect(() => {
-        const handleKeyPress = (event) => {
-            if (event.key === 'Escape'){
-                setModel('')
-            };
-        };
-
-        window.addEventListener("keydown", handleKeyPress);
-                
-        return () => {
-            window.removeEventListener("keydown", handleKeyPress);
-        };
-    }, []); 
-
     return (
         <>
             <div className="w-full absolute top-20 h-fit mt-8 z-20 flex flex-row justify-center items-center">
@@ -41,7 +27,7 @@ export function Playground() {
             </div>
 
             {model != '' ?             
-            <Canvas className='mt-4 rounded-t-3xl hover:cursor-move' camera={{ position: [0, 0, 5], zoom: 1.2 }}>
+            <Canvas className='mt-4 rounded-t-3xl hover:cursor-move' camera={{ position: [0, 5, 10], zoom: 1.2 }}>
                 <ambientLight intensity={1.5} />
                 <pointLight position={[10, 10, 10]} />
                 <RotatingModel model={model} position={[0, 0, 0]}/>
