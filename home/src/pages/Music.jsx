@@ -63,10 +63,6 @@ export function Music() {
     }
 
     useEffect(() => {
-        console.log(playing)
-    }, [playing])
-
-    useEffect(() => {
         if (playingPath) {
             audioRef.current.load();
             if (play) {
