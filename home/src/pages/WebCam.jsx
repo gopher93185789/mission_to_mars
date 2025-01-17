@@ -46,7 +46,7 @@ export function WebCam() {
   return (
     <> 
       <div className="absolute h-screen w-screen flex flex-col gap-5 items-center">
-          <Canvas className='mt-4 rounded-t-3xl hover:cursor-move' camera={{ position: [-50, 15, 0], zoom: 10 }}>
+          <Canvas className='hover:cursor-move' camera={{ position: [-50, 15, 0], zoom: 10 }}>
               <ambientLight intensity={15} />
               <RotatingModel  position={[0, 0, 0]}/>
               <ShipModel position={[0, 0, 100]}/>
