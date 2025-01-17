@@ -3,7 +3,7 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls, useGLTF } from '@react-three/drei';
 
 
-function Galaxy({model = 'models/galaxy.glb'}) {
+function Galaxy({model = 'models/space2.glb'}) {
   const modelRef = useRef();
   const { scene, materials } = useGLTF(model);  
 
@@ -21,7 +21,7 @@ function Galaxy({model = 'models/galaxy.glb'}) {
   }, [materials, scene]);
 
   return (
-    <mesh ref={modelRef} >
+    <mesh ref={modelRef} scale={13} position={[-23, -15, 0]} >
       <primitive object={scene} />
     </mesh>
   );
