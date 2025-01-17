@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const defaultGenres = ["Action", "Comedy", "Sci-fi", "Thriller", "Drama"]
+const defaultGenres = ["All", "Action", "Comedy", "Sci-fi", "Thriller", "Drama"]
 
 export function GenreSelect({genres = defaultGenres, sg, currGenre}) {
     

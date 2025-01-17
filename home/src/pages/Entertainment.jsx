@@ -5,23 +5,23 @@ import { FaPlay } from 'react-icons/fa'
 
 
 const defaultShows = [
-    {title: "Daredevil", release: 2015, link: "shows/dare.png"},
-    {title: "American Gods", release: 2017, link: "shows/gods.png"},
-    {title: "Game of Thrones", release: 2011, link: "shows/got.png"},
-    {title: "Lucifer", release: 2016, link: "shows/luci.png"},
-    {title: "Rick and Morty", release: 2013, link: "shows/rm.png"},
-    {title: "Solo Leveling", release: 2024, link: "shows/solo.png"},
+    {title: "Daredevil", release: 2015, link: "shows/dare.png", category: "Action"},
+    {title: "American Gods", release: 2017, link: "shows/gods.png", category: "Drama"},
+    {title: "Game of Thrones", release: 2011, link: "shows/got.png", category: "Drama"},
+    {title: "Lucifer", release: 2016, link: "shows/luci.png", category: "Comedy"},
+    {title: "Rick and Morty", release: 2013, link: "shows/rm.png", category: "Sci-fi"},
+    {title: "Solo Leveling", release: 2024, link: "shows/solo.png", category: "Action"},
 ];
-
 
 const movies = [
-    {title: "The Batman", release: 2022, link: "movies/batman.png"},
-    {title: "No Country for Old Men", release: 2007, link: "movies/ncfom.png"},
-    {title: "Fury", release: 2014, link: "movies/tank.png"},
-    {title: "Pacific Rim", release: 2013, link: "movies/pacific.png"},
-    {title: "The PBT Pines", release: 2012, link: "movies/pines.png"},
-    {title: "The Wolf of Wall Street", release: 2013, link: "movies/wow.png"},
+    {title: "The Batman", release: 2022, link: "movies/batman.png", category: "Action"},
+    {title: "No Country for Old Men", release: 2007, link: "movies/ncfom.png", category: "Thriller"},
+    {title: "Fury", release: 2014, link: "movies/tank.png", category: "Action"},
+    {title: "Pacific Rim", release: 2013, link: "movies/pacific.png", category: "Sci-fi"},
+    {title: "The PBT Pines", release: 2012, link: "movies/pines.png", category: "Drama"},
+    {title: "The Wolf of Wall Street", release: 2013, link: "movies/wow.png", category: "Comedy"},
 ];
+
 
 
 const featured = [
@@ -31,7 +31,7 @@ const featured = [
 ]
 
 export function Entertainment() {
-    const [currGenre, setCurrGenre] = useState("action");
+    const [currGenre, setCurrGenre] = useState("all");
     const [showVideo, setShowVideo] = useState(false); 
     
     const [isDragging, setIsDragging] = useState(false);
@@ -48,6 +48,7 @@ export function Entertainment() {
     }
 
     useEffect(() => {
+        console.log(currGenre)
         setShowVideo(false)
     }, [currGenre])
 
@@ -113,8 +114,8 @@ export function Entertainment() {
 
                     <p className="text-white font-bold text-lg h-fit">Explore {currGenre} movies</p>
                     <div ref={exploreRef} onMouseUp={() => handleMouseUp(exploreRef)} onMouseMove={(e) => handleMouseMove(e, exploreRef)} onMouseDown={(e) => handleDown(e, exploreRef)} onMouseLeave={() => handleMouseLeave(exploreRef)} className="w-full h-[25%]  overflow-scroll  py-2 scrollbar-thin scrollbar-track-neutral-950 scrollbar-thumb-neutral-800 overflow-y-hidden overflow-x-auto flex flex-row gap-5">
-                        {movies.length > 0 ? movies.map((item, index) => (
-                            <div key={index} className="aspect-video flex-shrink-0 overflow-hidden rounded-xl relative">
+                        {movies.length > 0 ? movies.map((item, index) => ( 
+                            currGenre === "All" ?                             <div key={index} className="aspect-video flex-shrink-0 overflow-hidden rounded-xl relative">
                                 <img draggable={"false"} src={item.link} className="z-0 w-full opacity-100 h-full absolute top-0 left-0" />
   
                                 <div className="w-full h-[30%] absolute left-0 pt-0 pl-3 pb-4 bottom-0 mt-auto backdrop-blur-sm ">
@@ -131,7 +132,28 @@ export function Entertainment() {
 
                                     </div>
                                 </div>
-                            </div>
+                            </div> :
+
+                            item.category === currGenre ?
+                                <div key={index} className="aspect-video flex-shrink-0 overflow-hidden rounded-xl relative">
+                                    <img draggable={"false"} src={item.link} className="z-0 w-full opacity-100 h-full absolute top-0 left-0" />
+    
+                                    <div className="w-full h-[30%] absolute left-0 pt-0 pl-3 pb-4 bottom-0 mt-auto backdrop-blur-sm ">
+                                        <div className="w-full h-full flex flex-row">
+                                            <div className="w-4/5">
+                                                <p className="text-left text-nowrap text-white text-lg font-bold">{item.title}</p>
+                                                <p className="text-left text-white text-opacity-50 text-sm">{item.release}</p>
+                                            </div>
+                                            <div className="w-2/12 flex items-center justify-end"> 
+                                                <button onClick={handleClick}>
+                                                    <FaPlay className="text-green-800 hover:scale-110 duration-300 active:scale-95 ease-in-out hover:text-green-900 size-7" />
+                                                </button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            : null
                         )): noContent("No Movies Available")}
                     </div>
 
@@ -139,11 +161,11 @@ export function Entertainment() {
                     <p className="text-white font-bold text-lg h-fit">Explore {currGenre} shows</p>
                     <div ref={shows} onMouseUp={() => handleMouseUp(shows)} onMouseMove={(e) => handleMouseMove(e, shows)} onMouseDown={(e) => handleDown(e, shows)} onMouseLeave={() => handleMouseLeave(shows)} className="w-full h-[25%]  overflow-scroll  py-2 scrollbar-thin scrollbar-track-neutral-950 scrollbar-thumb-neutral-800 overflow-y-hidden overflow-x-auto flex flex-row gap-5">
                         {defaultShows.length > 0 ? defaultShows.map((item, index) => (
-                            <div key={index} className="aspect-video flex-shrink-0 overflow-hidden rounded-xl relative">
-                                <img draggable={"false"} src={item.link} className="z-0 w-full opacity-70 h-full absolute top-0 left-0" />
+                                                        currGenre === "All" ?                             <div key={index} className="aspect-video flex-shrink-0 overflow-hidden rounded-xl relative">
+                                <img draggable={"false"} src={item.link} className="z-0 w-full opacity-100 h-full absolute top-0 left-0" />
   
                                 <div className="w-full h-[30%] absolute left-0 pt-0 pl-3 pb-4 bottom-0 mt-auto backdrop-blur-sm ">
-                                    <div className="w-full  h-full flex flex-row">
+                                    <div className="w-full h-full flex flex-row">
                                         <div className="w-4/5">
                                             <p className="text-left text-nowrap text-white text-lg font-bold">{item.title}</p>
                                             <p className="text-left text-white text-opacity-50 text-sm">{item.release}</p>
@@ -156,7 +178,28 @@ export function Entertainment() {
 
                                     </div>
                                 </div>
-                            </div>
+                            </div> :
+
+                            item.category === currGenre ?
+                                <div key={index} className="aspect-video flex-shrink-0 overflow-hidden rounded-xl relative">
+                                    <img draggable={"false"} src={item.link} className="z-0 w-full opacity-100 h-full absolute top-0 left-0" />
+    
+                                    <div className="w-full h-[30%] absolute left-0 pt-0 pl-3 pb-4 bottom-0 mt-auto backdrop-blur-sm ">
+                                        <div className="w-full h-full flex flex-row">
+                                            <div className="w-4/5">
+                                                <p className="text-left text-nowrap text-white text-lg font-bold">{item.title}</p>
+                                                <p className="text-left text-white text-opacity-50 text-sm">{item.release}</p>
+                                            </div>
+                                            <div className="w-2/12 flex items-center justify-end"> 
+                                                <button onClick={handleClick}>
+                                                    <FaPlay className="text-green-800 hover:scale-110 duration-300 active:scale-95 ease-in-out hover:text-green-900 size-7" />
+                                                </button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            : null
                         )): noContent("No Shows Available")}
 
                     </div>
