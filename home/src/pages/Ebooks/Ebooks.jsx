@@ -1,5 +1,6 @@
 import { Rings } from '../../components/Rings'
 import { BigText } from '../../components/BigText'
+import { StarCanvas } from '../../components/StarCanvas'
 import './style.css'
 
 const books = [
@@ -14,6 +15,7 @@ export function Ebooks() {
     return (
         <>  
             <Rings />
+            <StarCanvas numStars={300} />
             <BigText text='Library' />
             <div className="w-full h-full mt-5 justify-center flex flex-row gap-10">
                 {books.map((item, idx) => (

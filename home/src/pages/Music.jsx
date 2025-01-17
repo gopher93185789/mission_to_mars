@@ -3,6 +3,7 @@ import { FaPause, FaPlay } from 'react-icons/fa'
 import { ScrollBox } from "../components/ScrollBox";
 import { SongBanner } from "../components/SongBanner";
 import { FaFolder, FaHome, FaMusic, FaSpotify } from "react-icons/fa";
+import { StarCanvas } from "../components/StarCanvas";
 
 
 const scroll1 = [
@@ -22,7 +23,7 @@ const scroll2 = [
 ]
 
 const scroll3 = [
-{title:"DAMN.", artist: "Kendrick Lamar",       duration:"" , link:"" , image:"songs/kendo.png"},
+    {title:"DAMN.", artist: "Kendrick Lamar",       duration:"" , link:"" , image:"songs/kendo.png"},
     {title:"Street Gossip", artist: "Lil Baby", duration:"" , link:"music/baby.mp3" , image:"songs/baby2.png"},
     {title:"Trapsoul", artist: "Bryson Tiller", duration:"" , link:"music/bryson.mp3"  , image:"songs/trap.png"},
     {title:"JORDY", artist: "Jordymone9",       duration:"" , link:"" , image:"songs/jordy.png"},
@@ -35,9 +36,21 @@ export function Music() {
     const [play, setPlay] = useState(false)
     const [playing, setPlaying] = useState('')
     const [section, setSection] = useState('Home')
+    const [history, setHistory] = useState([]) //
 
     const audioRef = useRef(null)
     const [playingPath, setPlayingPath] = useState('')
+
+    useEffect(() => {
+        if (playing !== '') {
+            setHistory(prevHistory => [...prevHistory, playing])
+        }
+      
+    }, [playing])
+
+        useEffect(() => {
+        console.log(history)
+    }, [history])
     
 
     const handleScrollToSection = (id) => {
@@ -122,10 +135,27 @@ export function Music() {
         )
     }
 
+    const HistorySec = () => {
+        return (
+        <div className="px-10 flex flex-col gap-5">
+                {history.slice().reverse().map((title, idx) => (
+                    <div key={idx} className="w-full  h-24 p-2 shadow-lg shadow-neutral-950 bg-neutral-950 rounded-xl hover:scale-[102%] will-change-transform duration-300 flex flex-row ease-in-out">
+                        <img className="h-full rounded-md aspect-square" draggable={"false"} src={all.find(song => song.title === title).image} />
+                        <div className="w-fit mx-4 h-full flex flex-col justify-center">
+                            <p className="text-opacity-100 text-white h-fit  text-left text-lg  w-full font-bold">{all.find(song => song.title === title).title}  </p>
+                            <p className="text-opacity-50 text-white h-fit  text-left text-lg  w-full font-bold">{all.find(song => song.title === title).artist} </p>
+                        </div>
+                    </div>
+                ))}
+        </div>
+        )
+    } 
+
 
 
     return (
         <div className="h-full w-full mt-5 p-5 flex  items-center flex-col gap-5 ">
+            <StarCanvas numStars={300} />
                            
             <audio ref={audioRef} className="absolute hidden" src={playingPath} onEnded={() => (
                 setPlay(false)
@@ -150,7 +180,7 @@ export function Music() {
                             <p className={`w-full text-white ${section === 'Genres' ? "text-opacity-100": "text-opacity-50 group-hover:text-opacity-100"}  duration-300 ease-in-out text-left`}>Genres</p>
                         </button>
 
-                        <button onClick={() => setSection("Tracks")} className="w-full group bg-gradient-to-br bg-neutral-950  active:scale-95 px-5 h-10 items-center shadow-neutral-950 shadow-lg hover:scale-105 will-change-transform duration-300 ease-in-out rounded-xl flex flex-row gap-4">
+                        <button onClick={() => setSection('Tracks')} className="w-full group bg-gradient-to-br bg-neutral-950  active:scale-95 px-5 h-10 items-center shadow-neutral-950 shadow-lg hover:scale-105 will-change-transform duration-300 ease-in-out rounded-xl flex flex-row gap-4">
                             <FaMusic className={`text-white ${section === 'Tracks' ? "text-opacity-100": "text-opacity-50 group-hover:text-opacity-100"}  duration-300 ease-in-out delay-100 size-6`} />
                             <p className={`w-full text-white ${section === 'Tracks' ? "text-opacity-100": "text-opacity-50 group-hover:text-opacity-100"}  duration-300 ease-in-out text-left`}>Tracks</p>
                         </button>
@@ -158,17 +188,34 @@ export function Music() {
 
                     <div className="flex h-1/2 w-full flex-col gap-3">
                         <p className="text-white text-xl rounded-xl font-bold mb-3">Library</p>
-                        <p className="w-full text-white hover:cursor-not-allowed text-opacity-50 hover:text-opacity-100 duration-300 ease-in-out">Recently Played</p>
-                        <p className="w-full text-white hover:cursor-not-allowed text-opacity-50 hover:text-opacity-100 duration-300 ease-in-out">Favorite Tracks</p>
-                        <p className="w-full text-white hover:cursor-not-allowed text-opacity-50 hover:text-opacity-100 duration-300 ease-in-out">Charts</p>
-                        <p className="w-full text-white hover:cursor-not-allowed text-opacity-50 hover:text-opacity-100 duration-300 ease-in-out">Radio</p>
+                        <button onClick={() => setSection('History')} className={`w-full text-white text-left ${section === "History" ? "text-opacity-100" : "text-opacity-50 hover:text-opacity-100"} duration-300 ease-in-out`}>Recently Played</button>
+                        <button className="w-full text-white text-left hover:cursor-not-allowed text-opacity-50 hover:text-opacity-100 duration-300 ease-in-out">Favorite Tracks</button>
+                        <button className="w-full text-white text-left hover:cursor-not-allowed text-opacity-50 hover:text-opacity-100 duration-300 ease-in-out">Charts</button>
+                        <button className="w-full text-white text-left hover:cursor-not-allowed text-opacity-50 hover:text-opacity-100 duration-300 ease-in-out">Radio</button>
                     </div>
 
                 </div>
 
       
                 <div id="middle" className="w-full h-[87vh]  justify-center rounded-xl scrollbar scrollbar-none overflow-y-auto gap-5 flex-col"> 
-                    {section === 'Tracks' ? <Tracks setPlayingPath={setPlayingPath} audioref={audioRef} songs={all} play={play} setPlay={setPlay} playing={playing} setPlaying={setPlaying} /> : <HomeSection setPlayingPath={setPlayingPath} audioref={audioRef} /> }
+                    {section === 'Tracks' ? (
+                        <Tracks 
+                        setPlayingPath={setPlayingPath} 
+                        audioref={audioRef} 
+                        songs={all} 
+                        play={play} 
+                        setPlay={setPlay} 
+                        playing={playing} 
+                        setPlaying={setPlaying} 
+                        />
+                    ) : section === 'History' ? (
+                        <HistorySec />
+                    ) : (
+                        <HomeSection 
+                        setPlayingPath={setPlayingPath} 
+                        audioref={audioRef} 
+                        />
+                    )}
                 </div>
 
                 

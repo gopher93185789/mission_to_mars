@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { GenreSelect } from "../components/movies/Genre";
 import { Rings } from "../components/Rings";
 import { FaPlay } from 'react-icons/fa'
+import { StarCanvas } from "../components/StarCanvas";
 
 
 const defaultShows = [
@@ -89,6 +90,7 @@ export function Entertainment() {
     return (
         <>
             <Rings />
+            <StarCanvas numStars={300} />
             <div className="w-full h-full mt-20 px-44 pb-5 flex flex-row ">
                 <div className="w-1/12 flex flex-col gap-5">
                     <GenreSelect sg={(genre) => setCurrGenre(genre)} currGenre={currGenre} />

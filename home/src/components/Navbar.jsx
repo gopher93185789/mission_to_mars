@@ -28,7 +28,7 @@ export function Navbar({pages = keys}) {
     }
     
     return (
-        <div className="gap-12 mt-10 flex justify-center select-none flex-row">
+        <div className="gap-12 mt-10 z-50 flex justify-center select-none flex-row">
             {pages.map((item, idx) => (
                 <div className="w-full flex justify-center items-center" key={idx}>
                     <p onClick={() => {setClick(item.itemname)}} onMouseEnter={() => SetEnter(true)} onMouseLeave={() => SetEnter(false)} className={`w-full text-lg text-center text-white hover:text-opacity-100 ${enter ? "text-opacity-50" : evalpath(item.link, path) } duration-300 ease-in-out hover:cursor-pointer hover:scale-110 will-change-transform`}>
