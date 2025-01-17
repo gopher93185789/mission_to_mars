@@ -18,12 +18,12 @@ function RotatingModel({model = 'models/galaxy.glb'}) {
 function ShipModel({model = 'models/ship.glb'}) {
   const modelRef = useRef();
   const { scene } = useGLTF(model);
-  const [position, setPosition] = useState([0, 0, 1000])
+  const [position, setPosition] = useState([0, 0, 500])
 
 
   useEffect(() => {
     if (position[2] === 1259) {
-      setPosition((prev) => [prev[0], prev[1], 1000])
+      setPosition((prev) => [prev[0], prev[1], 500])
     }else {
       const interval = setInterval(() => {
           setPosition((prev) => [prev[0], prev[1], prev[2]-0.05])
@@ -46,7 +46,7 @@ export function WebCam() {
   return (
     <> 
       <div className="absolute h-screen w-screen flex flex-col gap-5 items-center">
-          <Canvas className='hover:cursor-move' camera={{ position: [-50, 15, 0], zoom: 10 }}>
+          <Canvas className='hover:cursor-move' camera={{ position: [-50, 15, 0], zoom: 5 }}>
               <ambientLight intensity={15} />
               <RotatingModel  position={[0, 0, 0]}/>
               <ShipModel position={[0, 0, 100]}/>
