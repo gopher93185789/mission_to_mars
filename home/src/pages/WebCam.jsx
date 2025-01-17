@@ -3,10 +3,22 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls, useGLTF } from '@react-three/drei';
 
 
-function RotatingModel({model = 'models/galaxy.glb'}) {
+function Galaxy({model = 'models/galaxy.glb'}) {
   const modelRef = useRef();
-  const { scene } = useGLTF(model);  
+  const { scene, materials } = useGLTF(model);  
 
+  useEffect(() => {
+    Object.keys(materials).forEach((key) => {
+      const material = materials[key];
+      if (material.map) {
+        material.map.needsUpdate = true;
+      }
+
+      if (material.envMap) {
+        material.envMap = scene.background;
+      }
+    });
+  }, [materials, scene]);
 
   return (
     <mesh ref={modelRef} >
@@ -36,9 +48,14 @@ function ShipModel({model = 'models/ship.glb'}) {
 
 
   return (
+    <>
     <mesh ref={modelRef} scale={1/50}  >
       <primitive object={scene} position={position} />
     </mesh>
+    <pointLight position={[position[0], position[1], position[2]]} intensity={15} color="blue" />
+
+    </>
+
   );
 }
 
@@ -47,8 +64,8 @@ export function WebCam() {
     <> 
       <div className="absolute h-screen w-screen flex flex-col gap-5 items-center">
           <Canvas className='hover:cursor-move' camera={{ position: [-50, 15, 0], zoom: 5 }}>
-              <ambientLight intensity={15} />
-              <RotatingModel  position={[0, 0, 0]}/>
+              <ambientLight intensity={5} />
+              <Galaxy  position={[0, 0, 0]}/>
               <ShipModel position={[0, 0, 100]}/>
               <OrbitControls panSpeed={0.1} rotateSpeed={0.1} maxDistance={130} />
           </Canvas>

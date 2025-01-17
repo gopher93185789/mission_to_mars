@@ -32,7 +32,7 @@ export function Playground() {
               <ambientLight intensity={1.5} />
               <pointLight position={[10, 10, 10]} />
               <RotatingModel model={model} position={[0, 0, 0]}/>
-              <OrbitControls panSpeed={0.5} rotateSpeed={0.5} />
+              <OrbitControls panSpeed={0.5} maxDistance={100}  minDistance={1} rotateSpeed={0.5} />
           </Canvas> : null} 
         </div>
     )
