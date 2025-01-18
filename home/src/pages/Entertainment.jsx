@@ -32,7 +32,7 @@ const featured = [
 ]
 
 export function Entertainment() {
-    const [currGenre, setCurrGenre] = useState("all");
+    const [currGenre, setCurrGenre] = useState("All");
     const [showVideo, setShowVideo] = useState(false); 
     
     const [isDragging, setIsDragging] = useState(false);

@@ -43,7 +43,7 @@ export function Planet({size}) {
           <ambientLight intensity={1.5} />
           <pointLight position={[10, 10, 10]} />
           <RotatingModel position={[0,-2, 0]}/>
-          <OrbitControls maxPolarAngle={1.6} minPolarAngle={1.6}/>
+          <OrbitControls maxPolarAngle={1.6} enablePan={false} minPolarAngle={1.6}/>
         </Canvas>
       </div>
       );

@@ -21,7 +21,7 @@ function Galaxy({model = 'models/space2.glb'}) {
   }, [materials, scene]);
 
   return (
-    <mesh ref={modelRef} scale={13} position={[-23, -15, 0]} >
+    <mesh ref={modelRef} scale={2} position={[-23, -15, 0]} >
       <primitive object={scene} />
     </mesh>
   );
