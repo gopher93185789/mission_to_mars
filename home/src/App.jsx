@@ -6,6 +6,8 @@ import { Ebooks } from "./pages/Ebooks/Ebooks";
 import { Playground } from "./pages/Playground";
 import { Music } from "./pages/Music";
 import { WebCam } from "./pages/WebCam";
+import { Restaurant } from "./pages/restaurant/Restaurant";
+import { Flight } from "./pages/Flight";
 
 
 const pages = [
@@ -32,13 +34,13 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/flight"  />
+          <Route path="/flight" element={<Flight />}  />
           <Route path="/Library" element={<Ebooks />}  />
           <Route path="/games"  />
           <Route path="/entertainment" element={<Entertainment />}  />
           <Route path="/fitness"  />
           <Route path="/music" element={<Music />}  />
-          <Route path="/food"  />
+          <Route path="/food" element={<Restaurant />}  />
           <Route path="/vr"  />
           <Route path="/cameras" element={<WebCam />}  />
           <Route path="/Playground" element={<Playground />}  />
