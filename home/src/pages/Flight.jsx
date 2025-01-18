@@ -45,7 +45,7 @@ function Mars({model = 'models/mars.glb'}) {
   }, [materials, scene]);
 
   return (
-    <mesh ref={modelRef} scale={1} position={[0, 0, 0]} >
+    <mesh ref={modelRef} scale={1} position={[-100, 0, 0]} >
       <primitive object={scene} />
     </mesh>
   );
@@ -71,12 +71,12 @@ function Ship({model = 'models/ship.glb'}) {
 
 
     useEffect(() => {
-      if (position[2] === 0) {
+      if (position[2] <= -200) {
         setPosition((prev) => [prev[0], prev[1], 0])
       }else {
         const interval = setInterval(() => {
             setPosition((prev) => [prev[0], prev[1], prev[2]-0.05])
-        }, 1);
+        }, 10);
          return () => clearInterval(interval)
       }
   
@@ -85,6 +85,30 @@ function Ship({model = 'models/ship.glb'}) {
   return (
     <mesh ref={modelRef} scale={1/12} position={[95, 0, 0]} rotation={[0, Math.PI / 2, 0]} >
       <primitive object={scene} position={position} />
+    </mesh>
+  );
+}
+
+function Galaxy({model = 'models/space2.glb'}) {
+  const modelRef = useRef();
+  const { scene, materials } = useGLTF(model);  
+
+  useEffect(() => {
+    Object.keys(materials).forEach((key) => {
+      const material = materials[key];
+      if (material.map) {
+        material.map.needsUpdate = true;
+      }
+
+      if (material.envMap) {
+        material.envMap = scene.background;
+      }
+    });
+  }, [materials, scene]);
+
+  return (
+    <mesh ref={modelRef} scale={100} position={[0, -100, 50]} >
+      <primitive object={scene} />
     </mesh>
   );
 }
@@ -166,8 +190,10 @@ export function Flight() {
             </div>
             <div className="w-1/2 h-full relative overflow-hidden bg-neutral-900 rounded-xl">
                 <div className=" h-full w-full flex items-center">
-                    <Canvas className='hover:cursor-move' camera={{ position: [140, 20, 20] }}>
+
+                    <Canvas className='hover:cursor-move' camera={{ position: [140, 30, 20] }}>
                         <ambientLight intensity={5} />
+                        <Galaxy />
                         <Earth  />
                         <Mars />
                         <Ship />
