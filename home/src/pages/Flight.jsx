@@ -70,17 +70,20 @@ function Ship({model = 'models/ship.glb'}) {
   }, [materials, scene]);
 
 
-    useEffect(() => {
-      if (position[2] <= -200) {
-        setPosition((prev) => [prev[0], prev[1], 0])
-      }else {
-        const interval = setInterval(() => {
-            setPosition((prev) => [prev[0], prev[1], prev[2]-0.05])
-        }, 10);
-         return () => clearInterval(interval)
-      }
-  
-    }, [])
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPosition((prev) => {
+        if (prev[2] <= -2300) {
+          return [prev[0], prev[1], 0];
+        }
+        return [prev[0], prev[1], prev[2] - 0.05];
+      });
+    }, 10);
+
+    return () => clearInterval(interval); 
+  }, []);
+
+
 
   return (
     <mesh ref={modelRef} scale={1/12} position={[95, 0, 0]} rotation={[0, Math.PI / 2, 0]} >
@@ -168,6 +171,18 @@ export function Flight() {
                         <div className="w-1/2 flex p-2 flex-col rounded-lg">
                             <p className="w-full text-xl font-bold text-white text-opacity-35">Fuel</p>
                             <p className="w-full text-2xl text-white tracking-wide font-medium">{Fuel}%</p>
+                        </div>
+                    </div>
+
+                    <div className="w-full h-fit p-1  gap-1 flex flex-row">
+                        <div className="w-1/2 flex p-2 flex-col rounded-lg">
+                            <p className="w-full text-xl font-bold text-white text-opacity-35">Inside temperature</p>
+                            <p className="w-full text-2xl text-white tracking-wide font-medium">21c</p>
+                        </div>
+
+                        <div className="w-1/2 flex p-2 flex-col rounded-lg">
+                            <p className="w-full text-xl font-bold text-white text-opacity-35">Outside temperature</p>
+                            <p className="w-full text-2xl text-white tracking-wide font-medium">-100c</p>
                         </div>
                     </div>
                 </div>

@@ -8,6 +8,7 @@ import { Music } from "./pages/Music";
 import { WebCam } from "./pages/WebCam";
 import { Restaurant } from "./pages/restaurant/Restaurant";
 import { Flight } from "./pages/Flight";
+import { Fitness } from "./pages/fitness/Fitness";
 
 
 const pages = [
@@ -38,7 +39,7 @@ export default function App() {
           <Route path="/Library" element={<Ebooks />}  />
           <Route path="/games"  />
           <Route path="/entertainment" element={<Entertainment />}  />
-          <Route path="/fitness"  />
+          <Route path="/fitness" element={<Fitness />} />
           <Route path="/music" element={<Music />}  />
           <Route path="/food" element={<Restaurant />}  />
           <Route path="/vr"  />

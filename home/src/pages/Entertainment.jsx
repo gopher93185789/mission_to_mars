@@ -206,7 +206,7 @@ export function Entertainment() {
 
                     </div>
 
-                    <div className={`w-screen overflow-hidden z-50 backdrop-blur-lg h-screen top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ${showVideo ? "absolute" : "hidden"}`}>
+                    <div className={`w-screen overflow-hidden z-50 backdrop-blur-lg h-screen top-1/2 left-1/2 -translate-x-1/2 absolute duration-300 ease-in-out will-change-transform -translate-y-1/2 ${showVideo ? "scale-100" : "scale-0"}`}>
                         {showVideo && (
                             <div className="w-full h-full flex justify-center items-center">
                                 <div className="gap-2 overflow-hidden w-1/2 relative flex rounded-2xl flex-row">
