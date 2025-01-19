@@ -206,18 +206,21 @@ export function Entertainment() {
 
                     </div>
 
-                    <div className={`w-[50%] h-[50%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mt-3 ${showVideo ? "absolute" : "hidden"}`}>
+                    <div className={`w-screen overflow-hidden z-50 backdrop-blur-lg h-screen top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ${showVideo ? "absolute" : "hidden"}`}>
                         {showVideo && (
-                            <div className="gap-2 overflow-hidden w-fit relative flex rounded-2xl flex-row">
-                                <div className="h-full overflow-hidden flex items-center">
-                                    <video controls autoPlay className="rounded-2xl">
-                                        <source src="video.mp4" type="video/mp4" />
-                                        Your browser does not support the video tag.
-                                    </video>
-                                </div>
+                            <div className="w-full h-full flex justify-center items-center">
+                                <div className="gap-2 overflow-hidden w-1/2 relative flex rounded-2xl flex-row">
+                                    <div className="h-full overflow-hidden flex items-center">
+                                        <video controls autoPlay className="rounded-2xl">
+                                            <source src="video.mp4" type="video/mp4" />
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    </div>
 
-                                <button onClick={handleClick} className="size-10 absolute top-0 right-0  bg-neutral-900 text-white font-bold rounded-bl-xl">x</button>
+                                    <button onClick={handleClick} className="size-10 absolute top-0 right-0  bg-neutral-900 text-white font-bold rounded-bl-xl">x</button>
+                                </div>
                             </div>
+
                         )}
                     </div>
                 </div>
