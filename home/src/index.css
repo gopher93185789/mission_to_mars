@@ -3,11 +3,10 @@
 @tailwind utilities;
 
 body {
-    background-image: url("/bgdark.png");
+    background-image: url("../public/bgdark.png"); 
     background-size: cover;
     background-position: center center; 
     background-repeat: no-repeat;
     margin: 0; 
     height: 100vh; 
 }
-
