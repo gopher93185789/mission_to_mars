@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-    background-image: url("./bg-dark.png");
+    background-image: url("/bgdark.png");
     background-size: cover;
     background-position: center center; 
     background-repeat: no-repeat;
