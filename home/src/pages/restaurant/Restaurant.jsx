@@ -338,8 +338,61 @@ export function Restaurant() {
               </div>
             </div>
           </div>
+          <h2 class="drinks-category">Soft Drinks</h2>
+    <div class="category-container">
+        <div class="card">
+            <img src="fotos/drink10.png" alt="Coke"/>
+            <div class="overlay">
+                <p>Coke</p>
+                
+                <button onClick={openPopup} class="order-btn" data-item="Coke">Order Now</button>
+            </div>
         </div>
+        <div class="card">
+            <img src="fotos/drink11.png" alt="Fanta"/>
+            <div class="overlay">
+                <p>Fanta</p>
+                
+                <button  onClick={openPopup} class="order-btn" data-item="Fanta">Order Now</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="fotos/drink12.png" alt="Sprite"/>
+            <div class="overlay">
+                <p>Sprite</p>
+                
+                <button onClick={openPopup} class="order-btn" data-item="Sprite">Order Now</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="fotos/drink13.png" alt="Ice Tea"/>
+            <div class="overlay">
+                <p>Ice Tea</p>
+                
+                <button onClick={openPopup} class="order-btn" data-item="Ice Tea">Order Now</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="fotos/drink14.png" alt="AppleJuice"/>
+            <div class="overlay">
+                <p>Apple Juice</p>
+                
+                <button onClick={openPopup} class="order-btn" data-item="AppleJuice">Order Now</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="fotos/drink15.png" alt="Water"/>
+            <div class="overlay">
+                <p>Water</p>
+                <button onClick={openPopup} class="order-btn" data-item="Water">Order Now</button>
+            </div>
+        </div>
+    </div>
+        </div>
+
       )}
+
+      
 
       {/* Popup */}
       {popupVisible && (
