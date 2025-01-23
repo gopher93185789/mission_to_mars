@@ -25,7 +25,7 @@ export function VrHolodeck() {
               <ambientLight intensity={1.5} />
               <pointLight position={[10, 10, 10]} />
               <RotatingModel />
-              <OrbitControls panSpeed={0.5} maxPolarAngle={10} minPolarAngle={1} maxDistance={7} minDistance={7} rotateSpeed={0.5} />
+              <OrbitControls enablePan={false} maxPolarAngle={10} minPolarAngle={1} maxDistance={7} minDistance={7} rotateSpeed={0.5} />
           </Canvas> 
         </div>
         </>
