@@ -1,6 +1,7 @@
 import React, {  useRef } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, useGLTF } from '@react-three/drei';
+import {  OrbitControls,  useGLTF } from '@react-three/drei';
+
 
 function RotatingModel() {
   const modelRef = useRef();
@@ -22,10 +23,10 @@ export function VrHolodeck() {
         <>
         <div className="absolute h-full w-full overflow-hidden">
           <Canvas className='hover:cursor-move' camera={{ position: [0, 5, 10], zoom: 1 }}>
-              <ambientLight intensity={1.5} />
+              <ambientLight intensity={0.5} />
               <pointLight position={[10, 10, 10]} />
               <RotatingModel />
-              <OrbitControls enablePan={false} maxPolarAngle={10} minPolarAngle={1} maxDistance={7} minDistance={7} rotateSpeed={0.5} />
+              <OrbitControls enablePan={false}  maxPolarAngle={1.7} maxDistance={7} minDistance={7} rotateSpeed={0.5} />
           </Canvas> 
         </div>
         </>
