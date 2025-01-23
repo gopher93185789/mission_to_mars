@@ -5,7 +5,7 @@ export function Game() {
     return(
         <div className='text-white'>
             <StarCanvas/>
-            <h2 className='mt-10'>Choose your game</h2>
+            <h2 className='mt-10 w-full text-center'>Choose your game</h2>
             <div id="game-container">
                 <div class="container">
                     <img src="/fotos/stickhero.png" alt="Stick Hero" />
