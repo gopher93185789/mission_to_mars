@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+</head>
+<body>
+	<a href="https://mission-to-mars-khaki.vercel.app/games" class="w-20 py-2 px-4 rounded-lg text-white hover:scale-105 duration-300 ease-in-out hover:cursor-pointer bg-neutral-800 absolute z-50 top-0 left-0 mt-10 ml-10">home</a>
+
+    <div class="container">
+        <div id="score"></div>
+        <canvas id="game" width="375" height="375"></canvas>
+        <div id="introduction">Hold down the mouse to stretch out a stick</div>
+        <div id="perfect">DOUBLE SCORE</div>
+        <button id="restart">RESTART</button>
+      </div>
+      <script src="script.js"></script>
+</body>
+</html>

@@ -10,7 +10,7 @@ import { Restaurant } from "./pages/restaurant/Restaurant";
 import { Flight } from "./pages/Flight";
 import { Fitness } from "./pages/fitness/Fitness";
 import { VrHolodeck } from "./pages/VrHolodeck";
-import { Game } from "./pages/Game";
+import { Game } from "./pages/game/Game";
 
 
 const pages = [
